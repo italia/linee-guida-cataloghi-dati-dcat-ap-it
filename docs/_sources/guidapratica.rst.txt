@@ -1,0 +1,5108 @@
+Il profilo DCAT-AP_IT
+=====================
+
+
+Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del
+profilo di metadatazione DCAT-AP\_IT saranno fornite istruzioni per
+l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML
+e RDF/Turtle. Il profilo complessivo è illustrato nella seguente figura.
+
+.. figure:: _images/DCAT-AP_IT_UML.png
+   :alt: DCAT-AP_IT UML Diagram
+
+   DCAT-AP_IT UML Diagram
+
+Come definire un catalogo di dati: ``dcatapit:Catalog``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Un catalogo è definito mediante la classe *Catalogo* identificata
+univocamente da un URI (Uniform Resource Identifier).
+
+
+================  ================================================================================
+**URI**           dcatapit:Catalog
+**Sotto classe**  dcat:Catalog
+**Descrizione**   Il catalogo che contiene i dati (aperti e non) pubblicato da un'amministrazione.
+**Cardinalità**   1
+**Stato**         Obbligatorio
+**RIferimento**   http://www.dati.gov.it/onto/dcatapit#Catalog
+================  ================================================================================
+
+
+Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+    {
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+          "dcat:dataset": [
+            {
+              "@id": "http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid"
+            },
+            {
+              "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid"
+            }
+          ],
+          "dcat:themeTaxonomy": {
+            "@id": "http://publications.europa.eu/resource/authority/data-theme"
+          },
+          "dcterms:description": {
+            "@language": "it",
+            "@value": "Il catalogo dei dati aperti della pubblica amministrazione italiana"
+          },
+          "dcterms:issued": {
+            "@type": "xsd:date",
+            "@value": "2012-01-15"
+          },
+          "dcterms:language": {
+            "@id": "http://publications.europa.eu/resource/authority/language/ITA"
+          },
+          "dcterms:modified": {
+            "@type": "xsd:date",
+            "@value": "2016-03-20"
+          },
+          "dcterms:publisher": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+          "dcterms:title": {
+            "@language": "it",
+            "@value": "Catalogo SPCData"
+          },
+          "foaf:homepage": {
+            "@id": "http://spcdata.digitpa.gov.it/index.html"
+          }
+        },
+
+    ``RDF/XML``
+
+.. code:: xml
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+        <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:modified rdf:datatype="&xsd;date">2016-03-20</dct:modified>
+            <dct:issued rdf:datatype="&xsd;date">2012-01-15</dct:issued>
+            <dct:title xml:lang="it">Catalogo SPCData</dct:title>
+            <dct:description xml:lang="it">Il catalogo dei dati aperti della pubblica amministrazione italiana</dct:description>
+            <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            <dcat:dataset rdf:resource="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid"/>
+            <dcat:dataset rdf:resource="http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid"/>
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+            <dcat:themeTaxonomy rdf:resource="http://publications.europa.eu/resource/authority/data-theme"/>
+            <foaf:homepage rdf:resource="http://spcdata.digitpa.gov.it/index.html"/>
+        </rdf:Description>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a               dcatapit:Catalog , dcat:Catalog ;
+        dct:title           "Catalogo Dati.gov.it"@it ;
+        dct:description         "Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
+        dct:modified            "2016-03-20"^^xsd:date ;
+        dct:issued          "2012-01-15"^^xsd:date ;
+        dct:publisher           <http://dati.gov.it/resource/Amministrazione/agid> ;
+        dct:language            <http://publications.europa.eu/resource/authority/language/ITA> ;
+        dcat:dataset            <http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid> ;
+        dcat:dataset            <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid> ;
+        foaf:homepage           <http://spcdata.digitpa.gov.it/index.html> ;
+        dcat:themeTaxonomy              <http://publications.europa.eu/resource/authority/data-theme> .
+
+Elementi obbligatori
+^^^^^^^^^^^^^^^^^^^^
+
+1) ***TITOLO del CATALOGO:*** ``dct:title``
+'''''''''''''''''''''''''''''''''''''''''''
+
+
+
+================  ================================================================================
+**Cardinalità**    1..N (può esistere più di un'istanza in diverse lingue, della stessa proprietà)
+**Stato**         Obbligatorio
+**Descrizione**   Il titolo del Catalogo.
+**RIferimento**   http://purl.org/dc/terms/title
+================  ================================================================================
+
+.. note::
+    Si raccomanda di inserire un testo **semplice e corto**. Si raccomanda di **non utilizzare acronimi o abbreviazioni incomprensibili**. Se si vogliono
+    utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi,
+    il nome del progetto alla fine del titolo stesso.
+
+    Esempio:
+    "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati della Regione Lazio".
+
+
+
+Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+          "dcterms:title": {
+            "@language": "it",
+            "@value": "Catalogo SPCData"
+          },
+          "dcterms:title": {
+            "@language": "en",
+            "@value": "SPCData Catalog"
+          },
+
+        altri elementi per specificere il catalogo
+
+    ``RDF/XML``
+
+.. code:: xml
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+        <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:title xml:lang="it">Catalogo SPCData</dct:title>
+            <dct:title xml:lang="en">SPCData Catalog</dct:title>
+            [altri elementi per specificare il catalogo]
+        </rdf:Description>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a       dcatapit:Catalog , dcat:Catalog ;
+        dct:title   "Catalogo Dati.gov.it"@it , "SPCData Catalog"@en ;
+
+      [altri elementi per specificare il catalogo] .
+
+
+2) ***DESCRIZIONE del CATALOGO:*** ``dct:description``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    La descrizione del Catalogo
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/description
+
+
+
+    Uso
+    Si raccomanda di fornire una breve descrizione delle caratteristiche principali del catalogo. <b>Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo.</b> Si ricorda che nessun tag HTML è consentito. <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA) e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007".
+
+
+
+Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+          "dcterms:description": {
+            "@language": "it",
+            "@value": "Il catalogo dei dati aperti della pubblica amministrazione italiana"
+          },
+
+         altri elementi per specificare il catalogo
+
+    ``RDF/XML``
+
+.. code:: xml
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+        <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:description xml:lang="it">Il catalogo dei dati aperti della pubblica amministrazione italiana</dct:description>
+            [altri elementi per specificare il catalogo]
+        </rdf:Description>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a         dcatapit:Catalog , dcat:Catalog ;
+        dct:description   "Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
+        [altri elementi per specificare il catalogo] .
+
+3) ***EDITORE del CATALOGO:*** ``dct:publisher``
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    L'editore del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/publisher
+
+
+
+    Uso
+    Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il catalogo. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente</a>
+
+
+
+Esempi di uso di ``dct:publisher`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+           "dcterms:publisher": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+
+          altri elementi che descrivono il catalogo
+
+          Dove l'amministrazione è definita come:
+          "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+          "@type": [
+            "foaf:Agent",
+            "http://dati.gov.it/onto/dcatapit#\"Agent"
+          ],
+          "dcterms:identifier": "agid",
+          "foaf:name": {
+            "@language": "it",
+            "@value": "Agenzia per l'Italia Digitale"
+          }
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+        <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            [altri elementi del catalogo]
+        </dcatapit:Catalog>
+
+     Dove l'amministrazione è definita come:
+     <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+        <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+            <rdf:type rdf:resource="&foaf;Agent"/>
+            <dct:identifier>agid</dct:identifier>
+            <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+        </dcatapit:Agent>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a       dcatapit:Catalog , dcat:Catalog ;
+        dct:publisher   <http://dati.gov.it/resource/Amministrazione/agid> ;
+        [altri elementi del catalogo] .
+
+     Dove l'amministrazione è definita come:
+
+     <http://dati.gov.it/resource/Amministrazione/agid>
+        a       dcatapit:Agent , foaf:Agent ;
+        dct:identifier  "agid" ;
+        foaf:name       "Agenzia per l'Italia Digitale" .
+
+4) ***DATA di ULTIMA MODIFICA del CATALOGO:*** ``dct:modified``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    La data di ultima modifica del Catalogo
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/modified
+
+
+
+    Uso
+    La data di ultima modifica del catalogo. E' la data in cui si verificano operazioni di modifica del catalogo (es. l’inserimento di un nuovo dataset nel catalogo, la modifica dei metadati del catalogo o di uno dei dataset in esso inclusi)
+
+
+
+Esempi di uso di ``dct:modified`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+            "dcterms:modified": {
+            "@type": "xsd:date",
+            "@value": "2016-03-20"
+          },
+
+          altri elementi del catalogo
+
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+        <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:modified rdf:datatype="&xsd;date">2016-03-20</dct:modified>
+            [altri elementi del catalogo]
+        </dcatapit:Catalog>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a       dcatapit:Catalog , dcat:Catalog ;
+        dct:modified    "2016-03-20"^^xsd:date ;
+        [altri elementi del catalogo] .
+
+5) ***DATASET del CATALOGO:*** ``dcat:dataset``
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    E' una proprietà che lega un oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog(Catalogo)</a> all'oggetto (codominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> ed è utilizzata per elencare la lista di dataset presenti nel catalogo
+
+
+
+    Riferimento
+    https://www.w3.org/ns/dcat#dataset
+
+
+
+    Uso
+    Indicare tante proprietà dcat:dataset quanti sono i dataset presenti nel catalogo
+
+
+
+Esempi di uso di ``dcat:dataset`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+          "dcat:dataset": [
+            {
+              "@id": "http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid"
+            },
+            {
+              "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid"
+            }
+          ],
+
+          altri elementi del catalogo
+
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+        <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dcat:dataset rdf:resource="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid"/>
+            <dcat:dataset rdf:resource="http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid"/>
+            [altri elementi del catalogo]
+        </dcatapit:Catalog>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a       dcatapit:Catalog , dcat:Catalog ;
+        dcat:dataset    <http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid> ;
+        dcat:dataset    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid> ;
+        [altri elementi del catalogo] .
+
+Elementi raccomandati
+^^^^^^^^^^^^^^^^^^^^^
+
+1) ***HOME PAGE del CATALOGO:*** ``foaf:homepage``
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Raccomandato
+
+
+
+    Descrizione
+    L'home page del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog(Catalogo)</a> a un oggetto (codominio) di tipo foaf:Document (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://xmlns.com/foaf/0.1/homepage
+
+
+
+    Uso
+    <b>Si raccomanda di indicare l’URL di una pagina web attiva che funge da pagina principale (home page) del catalogo. Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://).</b> <br />Esempio: "http://spcdata.digitpa.gov.it/index.html".
+
+
+
+Esempi di uso di ``foaf:homepage`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+          "foaf:homepage": {
+            "@id": "http://spcdata.digitpa.gov.it/index.html"
+          }
+
+        altri elementi del catalogo
+
+    ``RDF/XML``
+
+.. code:: xml
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+        <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <foaf:homepage rdf:resource="http://spcdata.digitpa.gov.it/index.html"/>
+            [altri elementi del catalogo]
+        </rdf:Description>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a           dcatapit:Catalog , dcat:Catalog ;
+        foaf:homepage   <http://spcdata.digitpa.gov.it/index.html>  ;
+
+      [altri elementi del catalogo] .
+
+
+2) ***LINGUA del CATALOGO:*** ``dct:language``
+''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Raccomandato
+
+
+
+    Descrizione
+    La lingua del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog(Catalogo)</a> a un oggetto (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/language
+
+
+
+    Uso
+    Indicare una o più lingue utilizzate nel catalogo. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b>
+
+
+
+Esempi di uso di ``dct:language`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+          "dcterms:language": {
+            "@id": "http://publications.europa.eu/resource/authority/language/ITA"
+          },
+
+        altri elementi del catalogo
+
+    ``RDF/XML``
+
+.. code:: xml
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+        <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+            [altri elementi del catalogo]
+        </rdf:Description>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a           dcatapit:Catalog , dcat:Catalog ;
+        dct:language    <http://publications.europa.eu/resource/authority/language/ITA> ;
+
+      [altri elementi del catalogo] .
+
+
+3) ***DATA di RILASCIO del CATALOGO:*** ``dct:issued``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Raccomandata
+
+
+
+
+    Descrizione
+    La data di rilascio del Catalogo
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/issued
+
+
+
+    Uso
+    E' la data in cui il catalogo è reso disponibile.
+
+
+
+Esempi di uso di ``dct:issued`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+            "dcterms:issued": {
+            "@type": "xsd:date",
+            "@value": "2016-03-20"
+          },
+
+          altri elementi del catalogo
+
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+        <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dct:issued rdf:datatype="&xsd;date">2016-03-20</dct:issued>
+            [altri elementi del catalogo]
+        </dcatapit:Catalog>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a       dcatapit:Catalog , dcat:Catalog ;
+        dct:issued  "2016-03-20"^^xsd:date ;
+        [altri elementi del catalogo] .
+
+4) ***TEMI del CATALOGO:*** ``dcat:themeTaxonomy``
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Raccomandato
+
+
+
+
+    Descrizione
+    Tema del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalogo</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://www.w3.org/ns/dcat#themeTaxonomy
+
+
+
+    Uso
+    Indicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (<b>non gli URI dei concetti presenti nel vocabolario</b>). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore di questa proprietà.
+
+
+
+Esempi di uso di ``dcat:themeTaxonomy`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+          "@type": [
+            "dcat:Catalog",
+            "http://dati.gov.it/onto/dcatapit#\"Catalog"
+          ],
+            "dcat:themeTaxonomy": {
+            "@id": "http://publications.europa.eu/resource/authority/data-theme"
+          },
+
+          altri elementi del catalogo
+
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+        <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+            <rdf:type rdf:resource="&dcat;Catalog"/>
+            <dcat:themeTaxonomy rdf:resource="http://publications.europa.eu/resource/authority/data-theme" />
+            [altri elementi del catalogo]
+        </dcatapit:Catalog>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Catalogp/datigov_agid>
+        a           dcatapit:Catalog , dcat:Catalog ;
+        dcat:themeTaxonomy  <http://publications.europa.eu/resource/authority/data-theme> ;
+        [altri elementi del catalogo] .
+
+Come definire un dataset in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Un dataset è definito mediante la classe *Dataset* identificata
+univocamente da un URI (Uniform Resource Identifier).
+
+Definizione di ``dcatapit:Dataset``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+::
+
+    <tr>
+        URI
+        dcatapit:Dataset
+    </tr>
+     <tr>
+        Sottoclasse
+        dcat:Dataset
+    </tr>
+    <tr>
+        Descrizione
+        Il dataset da descrivere.
+    </tr>
+    <tr>
+        Cardinalità
+        1..N
+    </tr>
+    <tr>
+        Stato
+        Obbligatorio
+    </tr>
+     <tr>
+        Riferimento
+        http://www.dati.gov.it/onto/dcatapit#Dataset
+    </tr>
+
+
+Esempi di uso di dcatapit:Dataset in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+     {
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcat:contactPoint": {
+            "@id": "http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA"
+          },
+          "dcat:distribution": {
+            "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti-N3"
+          },
+          "dcat:keyword": [
+            "Contratto pubblico",
+            "SPC",
+            "Acquisizione"
+          ],
+          "dcat:theme": {
+            "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON"
+          },
+          "dcterms:accrualPeriodicity": {
+            "@id": "http://publications.europa.eu/resource/authority/frequency/NEVER"
+          },
+          "dcterms:creator": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+          "dcterms:description": {
+            "@language": "it",
+            "@value": "Il dataset LOD che contiene i contratti SPC del Lotto 1 (2007)"
+          },
+          "dcterms:identifier": "agid:D.301",
+          "dcterms:modified": {
+            "@type": "xsd:date",
+            "@value": "2015-05-25"
+          },
+          "dcterms:publisher": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+          "dcterms:rightsHolder": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+          "dcterms:spatial": {
+            "@id": "http://www.geonames.org/3169070"
+          },
+          "dcterms:subject": [
+            {
+              "@id": "http://eurovoc.europa.eu/3193"
+            },
+            {
+              "@id": "http://eurovoc.europa.eu/1810"
+            }
+          ],
+          "dcterms:temporal": {
+            "@id": "http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC"
+          },
+          "dcterms:title": {
+            "@language": "it",
+            "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
+          }
+        },
+
+    ``RDF/XML``
+
+.. code:: xml
+
+      <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+            <dct:identifier>agid:D.301</dct:identifier>
+            <dcat:keyword>Acquisizione</dcat:keyword>
+        <dcat:keyword>SPC</dcat:keyword>
+            <dcat:keyword>Contratto pubblico</dcat:keyword>
+            <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
+            <dct:description xml:lang="it">Il dataset contiene i contratti SPC del Lotto 1 (2007)</dct:description>
+            <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            <dct:creator rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            <dct:rightsHolder rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            <dcat:distribution rdf:resource="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3"/>
+            <dcat:contactPoint rdf:resource="http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA"/>
+            <dct:temporal rdf:resource="http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC"/>
+            <dct:subject rdf:resource="http://eurovoc.europa.eu/3193"/>
+            <dct:subject rdf:resource="http://eurovoc.europa.eu/1810"/>
+            <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+            <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/NEVER"/>
+            <dct:spatial rdf:resource="http://www.geonames.org/3169070"/>
+        </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a               dcatapit:Dataset , dcat:Dataset ;
+        dct:identifier          "agid:D.301" ;
+        dct:title           "Contratti del Sistema Pubblico di Connettività (SPC)"@it ;
+        dct:description         "Il dataset contiene i contratti SPC del Lotto 1 (2007)"@it ;
+        dcat:theme          <http://publications.europa.eu/resource/authority/data-theme/ECON> ;
+        dct:subject         <http://eurovoc.europa.eu/3193> , <http://eurovoc.europa.eu/1810>;
+        dct:modified            "2015-05-25"^^xsd:date ;
+        dcat:keyword            "Acquisizione" , "Contratto pubblico" , "SPC" ;
+        dct:rightsHolder        <http://dati.gov.it/resource/Amministrazione/agid> ;
+        dct:creator             <http://dati.gov.it/resource/Amministrazione/agid> ;
+        dct:publisher           <http://dati.gov.it/resource/Amministrazione/agid> ;
+        dcat:distribution       <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
+        dct:accrualPeriodicity      <http://publications.europa.eu/resource/authority/frequency/NEVER> ;
+        dcat:contactPoint       <http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA> ;
+        dct:spatial             <http://www.geonames.org/3169070> ;
+        dct:temporal            <http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC> .
+
+Elementi obbligatori
+^^^^^^^^^^^^^^^^^^^^
+
+1) ***IDENTIFICATIVO del DATASET:*** ``dct:identifier``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    L'identificativo univoco del Dataset assegnato dal catalogo nazionale
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/identifier
+
+
+
+    Uso
+    L'identificativo univoco del dataset è assegnato dal catalogo nazionale ed è costituito da codiceIPA:D.numeroProgressivo<br />Esempio:agid:D.1
+
+
+
+Esempi di uso di ``dct:identifier`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+\`\`\`JSON
+
+::
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcterms:identifier": "agid:D.301",
+
+      altri elementi del dataset
+
+\`\`\`
+
+    ``RDF/XML``
+
+.. code:: xml
+
+      <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:identifier>agid:D.1</dct:identifier>
+            [altri elementi per specificare il dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+       a            dcatapit:Dataset , dcat:Dataset ;
+       dct:identifier   "agid:D.1" ;
+
+       [altri elementi per specificare il dataset] .
+
+
+2) ***TITOLO del DATASET:*** ``dct:title``
+''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    Il titolo del Dataset
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/title
+
+
+
+    Uso
+    Si raccomanda di inserire un testo <b>semplice e corto</b>. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il dataset sia legato a un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso. Si può evitare di inserire nel titolo del Dataset la distribuzione dello stesso (e.g., si può evitare di scrivere un titolo come "Luoghi ed eventi della cultura in LOD"). <br />Esempi di titoli di dataset: "Contratti del Sistema Pubblico di Connettività (SPC)" oppure "Luoghi ed eventi della cultura".
+
+
+
+Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+\`\`\`JSON
+
+::
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcterms:title": {
+        "@language": "it",
+        "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
+      },
+
+      altri elementi del dataset
+
+\`\`\`
+
+    ``RDF/XML``
+
+.. code:: xml
+
+      <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
+            [altri elementi per specificare il dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+       a        dcatapit:Dataset , dcat:Dataset ;
+       dct:title    "Contratti del Sistema Pubblico di Connettività (SPC)"@it ;
+
+       [altri elementi per specificare il dataset] .
+
+
+3) ***DESCRIZIONE del DATASET:*** ``dct:description``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    La descrizione del Dataset che indica cosa contiene il dataset.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/description
+
+
+
+    Uso
+    <b>Si raccomanda di fornire una breve descrizione dei contenuti principali del dataset. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il contenuto del dataset. Ove possibile, si possono fornire indicazioni sulla struttura dei dati che compongono il dataset. Si ricorda che nessun tag HTML è consentito.</b> <br />Esempi: "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007." oppure "Il dataset contiene i dati relativi ai luoghi della cultura (e.g., musei, biblioteche, siti archeologici, ecc.) e i relativi eventi culturali che si tengono nei luoghi. Informazioni sugli orari di apertura per i luoghi e i relativi eventi sono incluse nel dataset".
+
+
+
+Esempi di uso di ``dct:description`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcterms:description": {
+            "@language": "it",
+            "@value": "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC)
+                   relativi al Lotto 1 dell'anno 2007"
+          },
+
+         altri elementi per specificare il dataset
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:description xml:lang="it">Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007.</dct:description>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a       dcatapit:Dataset , dcat:Dataset ;
+        dct:description "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC)
+                 relativi al Lotto 1 dell'anno 2007."
+
+        [altri elementi per specificare il dataset] .
+
+
+4) ***DATA DI ULTIMA MODIFICA del DATASET:*** ``dct:modified``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    La data di ultima modifica del Dataset
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/modified
+
+
+
+    Uso
+    Si raccomanda di usare il formato ISO 8601, i.e., yyyy-mm-dd
+
+
+
+Esempi di uso di ``dct:modified`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcterms:modified": {
+            "@type": "xsd:date",
+            "@value": "2015-05-25"
+          },
+
+         altri elementi per specificare il dataset
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a       dcatapit:Dataset , dcat:Dataset ;
+        dct:modified    "2015-05-25"^^xsd:date ;
+
+        [altri elementi per specificare il dataset] .
+
+
+5) ***TEMI del DATASET:*** ``dcat:theme``
+'''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1..N
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    I temi attraverso cui classificare il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://www.w3.org/ns/dcat#theme
+
+
+
+    Uso
+    Il metadato assume come valore un URI (NON una stringa con l'URL del tema) che <b>deve essere necessariamente</b> uno tra quelli definiti nel <a href="http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf">vocabolario Europeo sui Temi per i dati</a>. Esempio: se il tema è Agricoltura, Pesca e Politiche Forestali e Alimentari il valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcat-ap_it">Come mappare i temi di DCAT-AP_IT</a>
+
+
+
+Esempi di uso di ``dcat:theme`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          {
+           "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON",
+           "@type": "skos:Concept",
+           "skos:prefLabel": {
+             "@language": "it",
+             "@value": "Economia e Finanze"
+          }
+        },
+
+         altri elementi per specificare il dataset
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+       Opzionalmente si può anche specificare
+       <!-- http://publications.europa.eu/resource/authority/data-theme/ECON -->
+
+        <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/ECON">
+            <skos:prefLabel xml:lang="it">Economia e Finanze</skos:prefLabel>
+        </skos:Concept>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a       dcatapit:Dataset , dcat:Dataset ;
+        dcat:theme      <http://publications.europa.eu/resource/authority/data-theme/ECON> ;
+
+        [altri elementi per specificare il dataset] .
+
+      Opzionalmente si può anche specificare
+
+      <http://publications.europa.eu/resource/authority/data-theme/ECON>
+        a       skos:Concept ;
+        skos:prefLabel  "Economia e Finanze"@it .
+
+
+6) ***TITOLARE del DATASET:*** ``dct:rightsHolder``
+'''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    Il titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent(Soggetto)</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/rightsHolder
+
+
+
+    Uso
+    Il metadato assume come valore un URI (NON una stringa). Esso rappresenta un’organizzazione (o pubblica amministrazione) responsabile della gestione complessiva del dataset in virtù dei propri compiti istituzionali. <b>Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente</a>
+
+
+
+
+
+
+Esempi di uso di ``dct:rightsHolder`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+           "dcterms:rightsHolder": {
+            "@id": "http://dati.gov.it/resource/Amministraione/agid"
+          },
+          altri elementi per specificare il dataset
+
+          Dove l'Organizzazione http://dati.gov.it/resource/Amministraione/agid è definita come:
+
+          "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+          "@type": [
+            "foaf:Agent",
+            "http://dati.gov.it/onto/dcatapit#\"Agent"
+          ],
+          "dcterms:identifier": "agid",
+          "foaf:name": {
+            "@language": "it",
+            "@value": "Agenzia per l'Italia Digitale"
+          }
+        },
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:rightsHolder rdf:resource="http://dati.gov.it/resource/Amministraione/agid"/>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+       Dove l'organizzazione
+       <!-- http://dati.gov.it/resource/Amministrazione/agid --> è definita come:
+
+        <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+            <rdf:type rdf:resource="&foaf;Agent"/>
+            <dct:identifier>agid</dct:identifier>
+            <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+        </dcatapit:Agent>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a         dcatapit:Dataset , dcat:Dataset ;
+        dct:rightsHolder  <http://dati.gov.it/resource/Amministraione/agid> ;
+
+        [altri elementi per specificare il dataset] .
+
+      Dove l'organizzazione <http://dati.gov.it/resource/Amministraione/agid> è definita come
+
+      <http://dati.gov.it/resource/Amministrazione/agid>
+      a             dcatapit:Agent , foaf:Agent ;
+      dct:identifier    "agid" ;
+      foaf:name     "Agenzia per l'Italia Digitale" .
+
+
+7) ***FREQUENZA di AGGIORNAMENTO del DATASET:*** ``dct:accrualPeriodicity``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    La frequenza di aggiornamento del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo dct:Frequency (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/accrualPeriodicity
+
+
+
+    Uso
+    La frequenza con cui il dataset viene aggiornato <b>assume necessariamente</b> uno dei valori definiti nel <a href="http://publications.europa.eu/mdr/resource/authority/frequency/skos/frequencies-skos.rdf">vocabolario Europeo sulle frequenze.</a> Esempio: se il dataset si aggiorna ogni trimestre il valore da indicare è http://publications.europa.eu/resource/authority/frequency/QUARTERLY. Nel caso la frequenza di aggiornamento non sia disponibile è possibile indicare una frequenza sconosciuta utilizzando il seguente URI: http://publications.europa.eu/resource/authority/frequency/UNKNOWN
+
+
+
+Esempi di uso di ``dct:accrualPeriodicity`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+            "dcterms:accrualPeriodicity": {
+            "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL_2"
+          },
+
+          altri elementi per specificare il dataset
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL_2"/>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a                dcatapit:Dataset , dcat:Dataset ;
+        dct:accrualPeriodicity   <http://publications.europa.eu/resource/authority/frequency/ANNUAL_2> ;
+
+        [altri elementi per specificare il dataset] .
+
+
+8) ***DISTRIBUZIONE del DATASET:*** ``dcat:distribution``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1..N nel caso di dati aperti, 0..N negli altri casi
+
+
+
+    Stato
+    Obbligatorio nel caso di dati aperti, Opzionale negli altri casi
+
+
+
+
+    Descrizione
+    La distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdistribution">Distribuzione</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://www.w3.org/ns/dcat#distribution
+
+
+
+    Uso
+    Una distribuzione è una forma attraverso cui il dataset è disponibile. Ogni dataset può essere disponibile in diverse forme, come per esempio diversi formati o differenti endpoint (e.g., SPARQL endpoint). Nel caso di serie temporali o spaziali o viste di un dataset, queste sono descritte mediante le distribuzioni. Per esempio, nel caso di un dataset suddiviso per regioni, le suddivisioni rappresentano distribuzioni di un dataset più ampio che include tutti i dati del territorio nazionale. <br /> Si veda <a href="#definizione-di-dcatapitdistribution">Come definire una distribuzione</a> per maggiori dettagli.
+
+
+
+Esempi di uso di ``dcat:distribution`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+           dcat:distribution": {
+            "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti-N3"
+          },
+
+          altri elementi per specificare il dataset
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dcat:distribution rdf:resource="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3"/>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a               dcatapit:Dataset , dcat:Dataset ;
+        dcat:distribution   <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
+
+        [altri elementi per specificare il dataset] .
+
+
+Elementi raccomandati
+^^^^^^^^^^^^^^^^^^^^^
+
+1) ***SOTTOTEMA del DATASET:*** ``dct:subject``
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Raccomandato
+
+
+
+
+    Descrizione
+    La sottocategoria in cui può  essere  classificato  il  Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/subject
+
+
+
+    Uso
+    In corrispondenza del <a href="#come-mappare-i-temi-di-dcat-ap_it">tema scelto</a>, si possono specificare più categorie per indicare parole chiave specifiche con cui il dataset può essere ulteriormente classificato.
+
+
+
+Esempi di uso di ``dct:subject`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+           "dcterms:subject": [
+            {
+              "@id": "http://eurovoc.europa.eu/3193"
+            },
+            {
+              "@id": "http://eurovoc.europa.eu/1810"
+            }
+          ],
+          altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:subject rdf:resource="http://eurovoc.europa.eu/3193"/>
+            <dct:subject rdf:resource="http://eurovoc.europa.eu/1810"/>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a                dcatapit:Dataset , dcat:Dataset ;
+        dct:subject      <http://eurovoc.europa.eu/3193> , <http://eurovoc.europa.eu/1810> ;
+        [altri elementi per specificare il dataset] .
+
+
+2) ***PUNTO di CONTATTO del DATASET:*** ``dcat:contactPoint``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Raccomandato
+
+
+
+
+    Descrizione
+    Il Punto di contatto del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitorganization">Punto di Contatto</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://www.w3.org/ns/dcat#contactPoint
+
+
+
+    Uso
+    Utilizzare questa proprietà per specificare le informazioni di contatto usate per inviare osservazioni, richieste di informazioni e commenti sul Dataset. <b>E' bene non confondere questo metadato con l'organizzazione titolare o editore o creatore del dataset. Il punto di contatto è usato tipicamente per specificare i riferimenti di un ufficio dell'organizzazione che può fornire informazioni sul dataset. Si veda la sezione <a href="#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it">Come definire un Punto di Contatto.</a></b>
+
+
+
+Esempi di uso di ``dcat:contactPoint`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcat:contactPoint": {
+            "@id": "http://dati.gov.it/resource/PuntoContatto/contactPointContrattiSPC"
+          },
+
+          altri elementi per specificare il dataset
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+       <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dcat:contactPoint rdf:resource="http://dati.gov.it/resource/PuntoContatto/contactPointContrattiSPC"/>
+            [altri elementi per specificare il dataset]
+       </dcatapit:Dataset>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a           dcatapit:Dataset , dcat:Dataset ;
+        dcat:contactPoint   <http://dati.gov.it/resource/PuntoContatto/contactPointContrattiSPC> ;
+        [altri elementi per specificare il dataset] .
+
+
+3) ***EDITORE del DATASET:*** ``dct:publisher``
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Raccomandato
+
+
+
+
+    Descrizione
+    L'editore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent (Soggetto)</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/publisher
+
+
+
+    Uso
+    Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agent.</a>
+
+
+
+Esempi di uso di ``dct:publisher`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+           "dcterms:publisher": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+
+          altri elementi che descrivono il dataset
+
+          Dove l'organizzazione editore è definita come:
+
+          "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+          "@type": [
+            "foaf:Agent",
+            "http://dati.gov.it/onto/dcatapit#\"Agent"
+          ],
+          "dcterms:identifier": "agid",
+          "foaf:name": {
+            "@language": "it",
+            "@value": "Agenzia per l'Italia Digitale"
+          }
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+     Dove l'organizzazione editore è descritta come:
+     <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+        <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+            <rdf:type rdf:resource="&foaf;Agent"/>
+            <dct:identifier>agid</dct:identifier>
+            <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+        </dcatapit:Agent>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a       dcatapit:Dataset , dcat:Dataset ;
+        dct:publisher   <http://dati.gov.it/resource/Amministrazione/agid> ;
+        [altri elementi del dataset] .
+
+     Dove l'organizzazione editore è definita come:
+     <http://dati.gov.it/resource/Amministrazione/agid>
+        a       dcatapit:Agent , foaf:Agent ;
+        dct:identifier  "agid" ;
+        foaf:name       "Agenzia per l'Italia Digitale" .
+
+Elementi opzionali
+^^^^^^^^^^^^^^^^^^
+
+1) ***AUTORE del DATASET:*** ``dct:creator``
+''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    Il creatore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent (Soggetto)</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/creator
+
+
+
+    Uso
+    Un'organizzazione (o pubblica amministrazione) che ha materialmente prodotto il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agent.</a>
+
+
+
+Esempi di uso di ``dct:creator`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+           "dcterms:creator": {
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+          },
+
+          altri elementi che descrivono il dataset
+
+          Dove l'amministrazione creatore è specificata come:
+          "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+          "@type": [
+            "foaf:Agent",
+            "http://dati.gov.it/onto/dcatapit#\"Agent"
+          ],
+          "dcterms:identifier": "agid",
+          "foaf:name": {
+            "@language": "it",
+            "@value": "Agenzia per l'Italia Digitale"
+          }
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+      <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:creator rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+     Dove l'amministrazione creatore è specificata come:
+     <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+        <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+            <rdf:type rdf:resource="&foaf;Agent"/>
+            <dct:identifier>agid</dct:identifier>
+            <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+        </dcatapit:Agent>
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a       dcatapit:Dataset , dcat:Dataset ;
+        dct:creator     <http://dati.gov.it/resource/Amministrazione/agid> ;
+        [altri elementi del dataset] .
+
+     Dove l'amministrazione creatore è specificata come:
+     <http://dati.gov.it/resource/Amministrazione/agid>
+        a       dcatapit:Agent , foaf:Agent ;
+        dct:identifier  "agid" ;
+        foaf:name       "Agenzia per l'Italia Digitale" .
+
+2) ***VERSIONE del DATASET:*** ``owl:versionInfo``
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    La versione del Dataset.
+
+
+
+    Riferimento
+    http://www.w3.org/2002/07/owl#versionInfo
+
+
+
+    Uso
+    Utilizzato per specificare il numero della versione o altre indicazioni della versione del dataset. <b>Per indicare il numero della versione, è fortemente raccomandato l’utilizzo di numeri separati dal “.”.</b> Esempi: 0.7, 1.2.3, 1.10
+
+
+
+Esempi di uso di ``owl:versionInfo`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+            "owl:versionInfo": "2.0"
+         },
+
+          altri elementi che descrivono il dataset
+
+     ```
+     >``RDF/XML``
+
+     ```XML
+
+     <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <owl:versionInfo>2.0</owl:versionInfo>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+     ```
+     >``RDF/Turtle``
+
+     ```Turtle
+     <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        owl:versionInfo  "2.0" ;
+        [altri elementi del dataset] .
+
+3) ***DATA di RILASCIO del DATASET:*** ``dct:issued``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    La data di rilascio del Dataset
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/issued
+
+
+
+    Uso
+    E' la data in cui il dataset è reso disponibile.
+
+
+
+Esempi di uso di ``dct:issued`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    \`\ ``JSON-LD``
+
+\`\`\`JSON "@id":
+"http://dati.gov.it/resource/Dataset/ContrattiSPC\_agid", "@type": [
+"dcat:Dataset", "http://dati.gov.it/onto/dcatapit#"Dataset" ],
+"dcterms:issued": { "@type": "xsd:date", "@value": "2012-01-15" },
+
+::
+
+      altri elementi del dataset
+
+\`\ ``>``\ RDF/XML\`\`
+
+\`\`\`XML
+
+::
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:issued rdf:datatype="&xsd;date">2012-01-15</dct:issued>
+        [altri elementi del dataset]
+    </dcatapit:Dataset>
+
+\`\ ``>``\ RDF/Turtle\`\`
+
+``Turtle  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>     a       dcatapit:Dataset , dcat:Dataset ;     dct:issued  "2012-01-15"^^xsd:date ;     [altri elementi del dataset] .``
+
+4) ***PAGINA DI ACCESSO del DATASET:*** ``dcat:landingPage``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La pagina di accesso o landing page del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo foaf:Document (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    https://www.w3.org/ns/dcat#landingPage
+
+
+
+    Uso
+    Si raccomanda di utilizzare l’URL della pagina web che fornisce l’accesso al dataset o alla sua distribuzione o ad altre informazioni aggiuntive. La pagina di accesso è quella di origine del fornitore del dato. Non è valido l’URL di una pagina web riferibile a un sito fornito da una terza parte, come nel caso di un aggregatore.
+
+
+
+Esempi di uso di ``dcat:landingPage`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+            "dcat:landingPage": {
+            "@id": "http://spcdata.digitpa.gov.it/dataLotto1.html"
+          },
+
+          altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dcat:landingPage rdf:resource="http://spcdata.digitpa.gov.it/dataLotto1.html />
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dcat:landingPage <http://spcdata.digitpa.gov.it/dataLotto1.html> ;
+        [altri elementi del dataset] .
+
+
+##### 5) ***LINGUA del DATASET:*** ``dct:language``
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La lingua del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/language
+
+
+
+    Uso
+    Indicaare una o più lingue utilizzate nel dataset. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b>
+
+
+
+Esempi di uso di ``dct:language`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+           "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcterms:language": {
+            "@id": "http://publications.europa.eu/resource/authority/language/ITA"
+          },
+
+        altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dct:language    <http://publications.europa.eu/resource/authority/language/ITA> ;
+
+      [altri elementi del dataset] .
+
+
+##### 6) ***PAROLE CHIAVE del DATASET:*** ``dcat:keyword``
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La parole chiave associate al Dataset
+
+
+
+    Riferimento
+    https://www.w3.org/ns/dcat#keyword
+
+
+
+    Uso
+    inserire una o più parole chiave che consentono di identificare l'oggetto principale del dataset. Se si è scelto di inserire un tema più specifico per il dataset (soggetto o sotto tema)  assicurarsi che le parole chiave siano allineate ai temi e sotto temi usati, derivanti dai relativi vocabolari controllati.<br /><b> Si ricorda che nella definizione delle parole chiave non sono ammessi alcuni caratteri come la virgola, l'apostrofo, la "/" e altri caratteri non alfanumerici. Pertanto NON sono ammesse parole chiave come "controllo della qualità dell'aria" oppure "cave dismesse, cave" oppure "legge 190/2012". In questi casi si suggerisce di sostituirle rispettivamente con "controllo qualità aria" ovvero togliendo testo superfluo, "cave dismesse" "cave" ovvero separando le diverse parole chiave, "legge 190-2012" ovvero inserendo un "-", ecc.</b>
+
+
+
+Esempi di uso di ``dcat:keyword`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+            "dcat:keyword": [
+            "Contratto pubblico",
+            "SPC",
+            "Acquisizione"
+          ],
+
+          altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dcat:keyword>Acquisizione</dcat:keyword>
+        <dcat:keyword>SPC</dcat:keyword>
+            <dcat:keyword>Contratto pubblico</dcat:keyword>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dcat:keyword     "Acquisizione" , "Contratto pubblico" , "SPC" ;
+        [altri elementi del dataset] .
+
+
+7) ***DATASET CORRELATO:*** ``dct:isVersionOf``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Un Dataset correlato che è una versione, un’edizione o un adattamento del Dataset descritto. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitdataset">Dataset</a> (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/isVersionOf
+
+
+
+    Uso
+    Utilizzare l'URI del dataset correlato, ovvero il riferimento a una versione, un’edizione, un adattamento del dataset descritto. Per esempio, se si vuole inserire una nuova versione 2.0 di un dataset già presente nel catalogo (con versione 1.0) si richiede di indicare il riferimento al dataset già incluso nel catalogo. <b>Si sconsiglia fortemente comunque di creare nuovi dataset per piccoli cambiamenti. E’ invece consigliato definire nuovi dataset solo in presenza di cambiamenti significativi rispetto a precedenti versioni (e.g., nuovi elementi inclusi, adattamenti significativi di alcuni elementi, ecc).</b>
+
+
+
+Esempi di uso di ``dct:isVersionOf`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+           "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          ""dcterms:isVersionOf": {
+            "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid01"
+          },
+
+        altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:isVersionOf rdf:resource="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid01"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dct:isVersionOf <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid01> ;
+
+      [altri elementi del dataset] .
+
+
+8) ***ESTENSIONE TEMPORALE del DATASET:*** ``dct:temporal``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Un periodo temporale coperto dal Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it">Periodo di Tempo</a> (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/temporal
+
+
+
+    Uso
+    Questo metadato è utilizzato per rappresentare, per esempio, casi quali “il dataset sul censimento della popolazione residente del 2011” oppure “il dataset sulla spesa pubblica dal 2000 al 2015". Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctperiodoftime-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per la copertura temporale del Dataset</a>
+
+
+
+Esempi di uso di ``dct:temporal`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcterms:temporal": {
+            "@id": "http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC"
+          },
+
+        altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:temporal rdf:resource="http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dct:temporal    <http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC> ;
+
+      [altri elementi del dataset] .
+
+
+9) ***COPERTURA GEOGRAFICA del DATASET:*** ``dct:spatial``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Un'area geografica coperta dal Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it">Localizzazione</a> (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/spatial
+
+
+
+    Uso
+    Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctlocation-e-locngeometry-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per la copertura geografica del Dataset</a>
+
+
+
+Esempi di uso di ``dct:spatial`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcterms:spatial": {
+            "@id": "http://www.geonames.org/3169070"
+          },
+
+        altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:spatial rdf:resource="http://www.geonames.org/3169070"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dct:spatial <http://www.geonames.org/3169070> ;
+
+      [altri elementi del dataset] .
+
+
+10) ***CONFORMITA' del DATASET:*** ``dct:conformsTo``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Una regola implementativa o altra specifica (e.g., una norma) a cui il Dataset è conforme. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#come-definire-lo-standard-del-dataset-in-dcat-ap_it">Standard</a> (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/conformsTo
+
+
+
+    Uso
+    Specificare uno o più standard riferibili al dataset. Si possono specificare sia standard tecnici (anche de-facto) come per esempio DCAT, ISO/IEC 25012, CSW, ecc., sia riferimenti normativi (e.g., Decreto legislativo n.82/2005 - Codice dell’Amministrazione Digitale). Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dcatapitstandard-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per lo Standard del Dataset</a>
+
+
+
+Esempi di uso di ``dct:conformsTo`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "dcterms:conformsTo": {
+            "@id": "http://dati.gov.it/resource/Standard/standard-org"
+          },
+
+        altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <dct:conformsTo rdf:resource="http://dati.gov.it/resource/Standard/standard-org"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        dct:conformsTo  <http://dati.gov.it/resource/Standard/standard-org> ;
+
+      [altri elementi del dataset] .
+
+
+11) ***ALTRO IDENTIFICATIVO del DATASET:*** ``adms:identifier``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Un eventuale identificativo secondario del Dataset (e.g., DOI, ISBN, W3ID, ecc.). La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#definizione-di-admsidentifier">Altro Identificativo</a> (specificato mediante un URI- Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://www.w3.org/ns/adms#identifier
+
+
+
+    Uso
+    Specificare uno o più identificativi secondari per il dataset. Per esempio, un identificativo secondario può essere un identificativo DOI (e.g., doi:10.10.1038/nphys1170) oppure un identificativo permanente per il Web W3ID (e.g., http://w3id.org/food) <b>oppure un identificativo stabile utilizzato in cataloghi locali</b>. Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-admsidentifier-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per l'Identificativo Alternativo del Dataset</a>
+
+
+
+Esempi di uso di ``adms:identifier`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+          "@type": [
+            "dcat:Dataset",
+            "http://dati.gov.it/onto/dcatapit#\"Dataset"
+          ],
+          "adms:identifier": {
+            "@id": "http://dati.gov.it/resource/Identifier/ContrattiSPC_agid_altroID"
+          },
+
+        altri elementi del dataset
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+            <rdf:type rdf:resource="&dcat;Dataset"/>
+            <adms:identifier rdf:resource="http://dati.gov.it/resource/Identifier/ContrattiSPC_agid_altroID"/>
+            [altri elementi del dataset]
+        </dcatapit:Dataset>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+     <<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+        a        dcatapit:Dataset , dcat:Dataset ;
+        adms:identifier <http://dati.gov.it/resource/Identifier/ContrattiSPC_agid_altroID> ;
+
+      [altri elementi del dataset] .
+
+
+Come definire una Distribuzione del Dataset in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Una distribuzione è definita mediante la classe *Distribution
+(Distribuzione)* identificata univocamente da un URI (Uniform Resource
+Identifier).
+
+Definizione di ``dcatapit:Distribution``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+::
+
+    <tr>
+        URI
+        dcatapit:Distribution
+    </tr>
+     <tr>
+        Sottoclasse
+        dcat:Distribution
+    </tr>
+    <tr>
+        Descrizione
+        La distribuzione del dataset da descrivere.
+    </tr>
+    <tr>
+        Cardinalità
+        1..N (se in presenza di dati aperti)
+    </tr>
+    <tr>
+        Stato
+        Obbligatorio (se in presenza di dati aperti)
+    </tr>
+     <tr>
+        Riferimento
+        http://www.dati.gov.it/onto/dcatapit#Distribution
+    </tr>
+
+
+Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+     {
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+          "dcat:accessURL": {
+            "@id": "http://spcdata.digitpa.gov.it:8899/sparql"
+          },
+          "dcat:downloadURL": {
+            "@id": "http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"
+          },
+          "dcterms:description": {
+            "@language": "it",
+            "@value": "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"
+          },
+          "dcterms:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/RDF"
+          },
+          "dcterms:license": {
+            "@id": "http://creativecommons.org/licenses/by/4.0/"
+          },
+          "dcterms:title": "Distribuzione Turtle di LOD SPC Contratti"
+     },
+
+    ``RDF/XML``
+
+.. code:: xml
+
+      <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+            <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/RDF"/>
+            <dct:title xml:lang="it">Distribuzione Turtle di LOD SPC Contratti</dct:title>
+            <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
+            <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+            <dcat:downloadURL rdf:resource="http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"/>
+            <dcat:accessURL rdf:resource="http://spcdata.digitpa.gov.it:8899/sparql"/>
+        </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a           dcatapit:Distribution , dcat:Distribution ;
+        dct:title       Distribuzione Turtle di LOD SPC Contratti"@it ;
+        dct:description     "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+        dct:format      <http://publications.europa.eu/resource/authority/file-type/RDF> ;
+        dct:license         <http://creativecommons.org/licenses/by/4.0/> ;
+        dcat:downloadURL    <http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt> ;
+        dcat:accessURL      <http://spcdata.digitpa.gov.it:8899/sparql> .
+
+Elementi obbligatori
+^^^^^^^^^^^^^^^^^^^^
+
+1) ***FORMATO della DISTRIBUZIONE:*** ``dct:format``
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    Il formato della Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo dct:MediaTypeOrExtent (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/format
+
+
+
+    Uso
+    Scegliere il formato in cui è reso disponibile il file relativo alla distribuzione descritta. Nel caso in cui il formato del file è di tipo “nidificato” (i.e. un file compresso, ad esempio nomefile.ttl.zip), allora indicare il formato originario del file compresso (nel caso dell’esempio, va indicato il formato ttl). <br /><b> Per specificare il formato si deve necessariamente utilizzare <a href="http://publications.europa.eu/mdr/resource/authority/file-type/skos/filetypes-skos.rdf">il vocabolario controllato definito a livello Europeo sui "File Type".</a> </b>
+
+
+
+
+
+
+Esempi di uso di ``dct:format`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcterms:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/RDF"
+          },
+          altri elementi per specificare la distribuzione
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+            <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/RDF"/>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a         dcatapit:Distribution , dcat:Distribution ;
+        dct:format    <http://publications.europa.eu/resource/authority/file-type/RDF> ;
+        [altri elementi per specificare la distribuzione] .
+
+2) ***URL di ACCESSO:*** ``dcat:accessURL``
+'''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    Un URL tramite cui accedere alla Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo rdfs:Resource (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    https://www.w3.org/ns/dcat#accessURL
+
+
+
+    Uso
+    Inserire l’URL di una pagina web tramite cui si possa accedere alla distribuzione. Essa può essere anche una pagina informativa che fornisce le indicazioni su come ottenere il dataset oppure l'URL di endpoint di accesso al dataset (e.g., SPARQL endpoint). Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://). <b> Si raccomanda di usare questa proprietà, e NON la proprietà <a href="#2-url-di-download-dcatdownloadurl">URL di download</a>, quando non è assolutamente una pagina di download o non si è sicuri che lo sia.</b>
+
+
+
+Esempi di uso di ``dcat:accessURL``\ per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcat:accessURL": {
+            "@id": "http://spcdata.digitpa.gov.it:8899/sparql"
+          },
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+            <dcat:accessURL rdf:resource="http://spcdata.digitpa.gov.it:8899/sparql"/>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a          dcatapit:Distribution , dcat:Distribution ;
+        dcat:accessURL    <http://spcdata.digitpa.gov.it:8899/sparql> ;
+        [altri elementi per specificare la distribuzione] .
+
+3) ***LICENZA:*** ``dct:license``
+'''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+
+    Descrizione
+    La licenza con la quale è resa disponibile, per il riutilizzo, la Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitlicensedocument">Licenza</a> (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/license
+
+
+
+    Uso
+    Per un uso pratico del metadato licenza si veda <a href="#esempi-di-uso-di-dcatapitlicensedocument-in-json-ld-rdfxml-rdfturtle">Come definire la licenza.</a><br /><b> Si raccomanda tuttavia, in presenza di licenze creative commons, di riferirsi a quelle specificate in http://creativecommons.org come negli esempi sotto riportati.</b>
+
+
+
+Esempi di uso di ``dct:license`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcterms:license": {
+            "@id": "http://creativecommons.org/licenses/by/4.0/"
+          },
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+            <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a          dcatapit:Distribution , dcat:Distribution ;
+        dct:license       <http://creativecommons.org/licenses/by/4.0/> ;
+        [altri elementi per specificare la distribuzione] .
+
+Elementi raccomandati
+^^^^^^^^^^^^^^^^^^^^^
+
+1) ***DESCRIZIONE della DISTRIBUZIONE:*** ``dct:description``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Raccomandato
+
+
+
+
+    Descrizione
+    La descrizione della Distribuzione del Dataset.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/description
+
+
+
+    Uso
+    Specificare una descrizione per la distribuzione, con una breve illustrazione delle sue caratteristiche principali. <b>Evitare di utilizzare un linguaggio ricco di riferimenti normativi</b>. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare la distribuzione. Si ricorda che nessun tag HTML è consentito,
+
+
+
+Esempi di uso di ``dct:description`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcterms:description": {
+            "@language": "it",
+            "@value": "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"
+          },
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+           <rdf:type rdf:resource="&dcat;Distribution"/>
+           <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a        dcatapit:Distribution , dcat:Distribution ;
+        dct:description  "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+        [altri elementi per specificare la distribuzione] .
+
+Elementi opzionali
+^^^^^^^^^^^^^^^^^^
+
+1) ***TITOLO della DISTRIBUZIONE:*** ``dct:title``
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    Il titolo della Distribuzione del Dataset.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/title
+
+
+
+    Uso
+    Se disponibile o ritenuto opportuno, inserire un titolo della distribuzione. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso o fornire una loro spiegazione.
+
+
+
+Esempi di uso di ``dct:title`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcterms:description": {
+            "@language": "it",
+            "@value": "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"
+          },
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+           <rdf:type rdf:resource="&dcat;Distribution"/>
+           <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
+           [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a        dcatapit:Distribution , dcat:Distribution ;
+        dct:description  "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+        [altri elementi per specificare la distribuzione] .
+
+2) ***URL di DOWNLOAD:*** ``dcat:downloadURL``
+''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    Un URL che rappresenta un link diretto al file scaricabile in un dato formato. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo rdfs:Resource (specificato mediante un URI - Uniform Resource Identifier)
+
+
+
+    Riferimento
+    https://www.w3.org/ns/dcat#downloadURL
+
+
+
+    Uso
+    Indicare l’URL che fornisce il link diretto a un file scaricabile nel formato indicato per la distribuzione. Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://).
+
+
+
+Esempi di uso di ``dcat:downloadURL``\ per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcat:downloadURL": {
+            "@id": "http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"
+          },
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+            <dcat:downloadURL rdf:resource="http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"/>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a          dcatapit:Distribution , dcat:Distribution ;
+        dcat:downloadURL   <http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt> ;
+        [altri elementi per specificare la distribuzione] .
+
+3) ***ULTIMA MODIFICA della DISTRIBUZIONE:*** ``dct:modified``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    La data di ultima modifica della Distribuzione del Dataset.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/modified
+
+
+
+    Uso
+    Indicare la data di ultima modifica o di aggiornamento della distribuzione.
+
+
+
+Esempi di uso di ``dct:modified`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcterms:modified": {
+            "@type": "xsd:date",
+            "@value": "2015-05-25"
+          },
+
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+            <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a        dcatapit:Distribution , dcat:Distribution ;
+        dct:modified    "2015-05-25"^^xsd:date ;
+        [altri elementi per specificare la distribuzione] .
+
+4) ***DIMENSIONE in BYTE:*** ``dcat:byteSize``
+''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+
+    Descrizione
+    La dimensione in byte della distribuzione del dataset
+
+
+
+    Riferimento
+    https://www.w3.org/ns/dcat#byteSize
+
+
+
+    Uso
+    Indicare il valore della dimensione del file espresso in byte
+
+
+
+Esempi di uso di ``dcat:byteSize``\ per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+
+          "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"Distribution",
+            "dcat:Distribution"
+          ],
+           "dcat:byteSize": {
+            "@type": "xsd:float",
+            "@value": "3000"
+          },
+          altri elementi per specificare la distribuzione
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+        <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+            <rdf:type rdf:resource="&dcat;Distribution"/>
+           <dcat:byteSize rdf:datatype="&xsd;float">3000</dcat:byteSize>
+            [altri elementi per specificare la distribuzione]
+       </dcatapit:Distribution>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+        a          dcatapit:Distribution , dcat:Distribution ;
+        dcat:byteSize      "3000"^^xsd:float ;
+        [altri elementi per specificare la distribuzione] .
+
+Come definire un Soggetto o Organizzazione in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Un soggetto/organizzazione è definito mediante la specifica della classe
+*Agente (Agent)* identificata univocamente da un URI (Uniform Resource
+Identifier).
+
+Definizione di ``dcatapit:Agent``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+dcatapit:Agent
+
+
+
+
+
+
+
+
+
+Sottoclasse
+
+
+
+
+
+
+
+foaf:Agent
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+Un soggetto (organizzazione) che gioca un certo ruolo sul catalogo e sui
+dataset del catalogo.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+1..N
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Obbligatorio
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://www.dati.gov.it/onto/dcatapit#Agent
+
+
+
+
+
+
+Elementi obbligatori che descrivono un Soggetto o Organizzazione
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***IDENTIFICATIVO del SOGGETTO***: ``dct:identifier``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    L'identificativo del soggetto (organizzazione)
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/identifier
+
+
+
+    Uso
+    Nel caso di pubbliche amministrazioni, l'identificativo è rappresentato dal codice IPA (Indice della Pubblica Amministrazione). Per organizzazioni private, l'identiticativo è rappresentato dalla partita IVA. Si consiglia di far riferimento all'organizzazione e non a singoli uffici.
+
+Esempio: "agid" oppure "r\_lazio".
+
+
+
+
+
+
+2) ***NOME del SOGGETTO***: ``foaf:name``
+'''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    Il nome del soggetto (organizzazione)
+
+
+
+    Riferimento
+    http://xmlns.com/foaf/0.1/name
+
+
+
+    Uso
+    Specificare il nome ufficiale della pubblica amministrazione così come riportato nell'Indice della Pubblica Amministrazione. Nel caso di oganizzazione privata, specificare il nome ufficiale della stessa così come riportato nel Registro Imprese.
+
+Esempio: "Agenzia per l'Italia Digitale".
+
+
+
+
+
+
+Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+    {
+          "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+          "@type": [
+            "foaf:Agent",
+            "http://dati.gov.it/onto/dcatapit#\"Agent"
+          ],
+          "dcterms:identifier": "agid",
+          "foaf:name": {
+            "@language": "it",
+            "@value": "Agenzia per l'Italia Digitale"
+          }
+        },
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+
+        <rdf:Description rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+            <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#&quot;Agent"/>
+            <rdf:type rdf:resource="&foaf;Agent"/>
+            <dct:identifier>agid</dct:identifier>
+            <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+        </rdf:Description>
+
+    ``RDF/TURTLE``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Amministrazione/agid>
+         a               dcatapit:Agent , foaf:Agent ;
+         dct:identifier  "agid" ;
+         foaf:name       "Agenzia per l'Italia Digitale" .
+
+Come definire la licenza in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La licenza è definita mediante la specifica della classe
+*dcatapti:LicenseDocument* identificata univocamente da un URI (Uniform
+Resource Identifier).
+
+Definizione di ``dcatapit:LicenseDocument``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+dcatapit:LisenceDocument
+
+
+
+
+
+
+
+
+
+Sottoclasse
+
+
+
+
+
+
+
+dct:LicenseDocument
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+La licenza della distribuzione del dataset.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Obbligatorio
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://www.dati.gov.it/onto/dcatapit#LicenseDocument
+
+
+
+
+
+
+Elementi raccomandati che descrivono la Licenza
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***TIPO della LICENZA***: ``dct:type``
+'''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Raccomandato
+
+
+
+    Descrizione
+    Il tipo di licenza associata alla distribuzione del dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitlicensedocument">dcatapit:LicenseDocument</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier).
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/type
+
+
+
+    Uso
+    Indicare il tipo di licenza. Esempi: “pubblico dominio”, “richiesto pagamento diritti”. I valori da utilizzare per  questa  proprietà sono gli URI dei concetti del vocabolario <a href="http://purl.org/adms/licencetype/">“ADMS licence type vocabulary.”</a>
+
+
+
+Elementi opzionali che descrivono la Licenza
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***NOME della LICENZA:*** ``foaf:name``
+''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N (possono esistere più istanze di questa proprietà, una per ogni lingua
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Il nome della licenza.
+
+
+
+    Riferimento
+    http://xmlns.com/foaf/0.1/name
+
+
+
+    Uso
+    Indicare il nome della licenza associata alla distribuzione. Esempio: "CC_BY" oppure "Creative Commons Attribution (CC-BY)".
+
+
+
+2) ***VERSIONE della LICENZA:*** ``owl:versionInfo``
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La versione della licenza
+
+
+
+    Riferimento
+    http://www.w3.org/2002/07/owl#versionInfo
+
+
+
+    Uso
+    Indicare la versione della licenza. Esempio: "4.0" oppure "3.0"
+
+
+
+Esempi di uso di dcatapit:LicenseDocument in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+       {
+          "@id": "http://creativecommons.org/licenses/by/4.0/",
+          "@type": [
+            "http://dati.gov.it/onto/dcatapit#\"LicenseDocument",
+            "dcterms:LicenseDocument"
+          ],
+          "dcterms:type": {
+            "@id": "http://purl.org/adms/licencetype/Attribution"
+          },
+          "foaf:name": "CC BY",
+          "owl:versionInfo": "4.0"
+        },
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://creativecommons.org/licenses/by/4.0/ -->
+        <dcatapit:LicenseDocument rdf:about="http://creativecommons.org/licenses/by/4.0/">
+            <rdf:type rdf:resource="&dct;LicenseDocument"/>
+            <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+            <owl:versionInfo>4.0</owl:versionInfo>
+            <foaf:name>CC BY</foaf:name>
+        </dcatapit:LicenseDocument>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://creativecommons.org/licenses/by/4.0/>
+        a        dcatapit:LicenseDocument , dct:LicenseDocument ;
+        dct:type     <http://purl.org/adms/licencetype/Attribution> ;
+        foaf:name    "CC BY" ;
+        owl:versionInfo  "4.0" .
+
+Come definire il Punto di Contatto del Dataset in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Il punto di contatto è definito mediante la specifica della classe
+*dcatapti:Organization* identificata univocamente da un URI (Uniform
+Resource Identifier).
+
+Definizione di ``dcatapit:Organization``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+dcatapit:Organization
+
+
+
+
+
+
+
+
+
+Sottoclasse
+
+
+
+
+
+
+
+vcard:Organization a sua volta sotto classe di vcard:Kind
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+Un ufficio/organizzazione che agisce come punto di contatto per il
+dataset.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+0..N
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Raccomandato
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://www.dati.gov.it/onto/dcatapit#Organization
+
+
+
+
+
+
+Elementi obbligatori che descrivono il Punto di Contatto
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***NOME del PUNTO di CONTATTO***: ``vcard:fn``
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    Il nome del contatto stabile per il dataset.
+
+
+
+    Riferimento
+    http://www.w3.org/2006/vcard/ns#fn
+
+
+
+    Uso
+    E’ fortemente raccomandato indicare il nome di uno specifico ufficio (unità organizzativa) responsabile della raccolta delle richieste/commenti e della predisposizione delle relative risposte. Solo se non è possibile individuare il riferimento dell’ufficio, si può indicare l’organizzazione nel suo complesso. Sono da evitare comunque nomi di singole persone. Questo metadato deve essere specificato qualora si inseriscano informazioni di contatto per il dataset. Per esempio, per il dataset LOD dell’Indice della Pubblica amministrazione il nome dell’ufficio/organizzazione è “banche dati e open data".
+
+
+
+2) ***EMAIL del PUNTO DI CONTATTO***: ``vcard:hasEmail``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    L’indirizzo email del punto di contatto per il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:Email (specificato mediante un URI - Uniform Resource Identifier).
+
+
+
+    Riferimento
+    http://www.w3.org/2006/vcard/ns#hasEmail
+
+
+
+    Uso
+    Indicare l’indirizzo email primario dell’ufficio (o gestito dall’ufficio) identificato come punto di contatto per il dataset. Se non è possibile identificare l’ufficio, si può inserire l’indirizzo email principale dell’organizzazione. Evitare in ogni caso di specificare indirizzi email di singole persone fisiche. Questo metadato deve essere specificato qualora si inseriscano informazioni di contatto per il dataset. Esempio: “mailto:info@dati.gov.it"
+
+
+
+Elementi opzionali che descrivono il Punto di Contatto
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***TELEFONO del PUNTO di CONTATTO***: ``vcard:hasTelephone``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Il telefono del contatto stabile per il dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:TelephoneType (specificato mediante un URI - Uniform Resource Identifier).
+
+
+
+    Riferimento
+    http://www.w3.org/2006/vcard/ns#hasTelephone
+
+
+
+    Uso
+    Indicare il numero di telefono dell’ufficio (o gestito dall’ufficio) identificato come punto di contatto per il dataset. Se non è possibile identificare l’ufficio, si può indicare il numero di telefono del centralino dell’amministrazione. Evitare in ogni caso di specificare numeri di telefono di singole persone.
+
+
+
+2) ***SITO del PUNTO DI CONTATTO***: ``vcard:hasURL``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    L’La pagina di contatto per il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo owl:Thing (specificato mediante un URI - Uniform Resource Identifier).
+
+
+
+    Riferimento
+    http://www.w3.org/2006/vcard/ns#hasURL
+
+
+
+    Uso
+    Se esiste, inserire l’URL primario di una pagina di contatto o di un form di contatto. Evitare il più possibile di indicare l’URL dell’home page dell’organizzazione. Un esempio di possibile valore per questo metadato è il seguente “http://spcdata.digitpa.gov.it/contattaci.html  (NON dovrebbe essere per esempio “httpi://www.agid.gov.it”). Nel caso in cui si abbia la necessità di indicare ulteriori URL di interesse per la risorsa descritta, oltre a quello principale, si possono aggiungere più istanze della proprietà foaf:page.
+
+
+
+Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+       {
+         "@id": "http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA",
+          "@type": [
+            "vcard:Organization",
+            "vcard:Kind",
+            "http://dati.gov.it/onto/dcatapit#\"Organization"
+          ],
+          "vcard:fn": "banche dati e open data",
+          "vcard:hasEmail": {
+            "@id": "mailto:info@dati.gov.it"
+          },
+          "vcard:hasTelephone": {
+            "@id": "_:N423506244f6e46028ea51a957fe407f3"
+          },
+          "vcard:hasURL": {
+            "@id": "http://spcdata.digitpa.gov.it/contattaci.html"
+          }
+          {
+           "@id": "_:N423506244f6e46028ea51a957fe407f3",
+           "@type": "vcard:Voice",
+           "vcard:value": "06123456"
+           },
+        },
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+       <!-- http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA -->
+        <dcatapit:Organization rdf:about="http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA">
+            <rdf:type rdf:resource="&vcard;Kind"/>
+            <rdf:type rdf:resource="&vcard;Organization"/>
+            <vcard:hasEmail rdf:resource="mailto:info@dati.gov.it"/>
+            <vcard:fn>banche dati e open data</vcard:fn>
+            <vcard:hasTelephone rdf:parseType="Resource">
+                <vcard:value>06123456</vcard:value>
+                <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Voice"/>
+            </vcard:hasTelephone>
+            <vcard:hasURL rdf:resource="http://spcdata.digitpa.gov.it/contattaci.html"/>
+        </dcatapit:Organization>
+
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA>
+        a               catapit:Organization , vcard:Organization, vcard:Kind ;
+        vcard:fn            "banche dati e open data" ;
+        vcard:hasEmail          <mailto:info@dati.gov.it> ;
+        vcard:hasTelephone      [ a vcard:Voice ; vcard:value "06123456" ] ;
+        vcard:hasURL            <http://spcdata.digitpa.gov.it/contattaci.html> .
+
+Come definire la copertura temporale del Dataset in DCAT-AP\_IT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+La copertura (o estensione) temporale del dataset è definita mediante la
+specifica della classe *PeriodOfTime (Periodo di Tempo)* identificata
+univocamente da un URI (Uniform Resource Identifier).
+
+Definizione di ``dct:PeriodOfTime``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+dct:PeriodOfTime
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+L'estensione temporale del dataset.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+0..N
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Opzionale
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://purl.org/dc/terms/PeriodOfTime
+
+
+
+
+
+
+Elementi obbligatori che descrivono il Periodo di Tempo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***DATA INIZIO***: ``dcatapit:startDate``
+''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Sottoproprietà
+    schema:startDate
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    La data di inizio del Periodo di tempo (estensione temporale).
+
+
+
+    Riferimento
+    http://dati.gov.it/onto/dcatapit#startDate
+
+
+
+    Uso
+    Qualora si indichi una copertura temporale per il dataset è obbligatorio specificare almeno la data di inizio
+
+
+
+Elementi opzionali che descrivono il Periodo di Tempo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***DATA FINE***: ``dcatapit:endDate``
+''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Sottoproprietà
+    schema:endDate
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La data di fine del Periodo di tempo (estensione temporale).
+
+
+
+    Riferimento
+    http://dati.gov.it/onto/dcatapit#endDate
+
+
+
+    Uso
+    Indicare la data di fine del periodo temporale qualora il periodo temporale complessivo è ultimato. Nel caso di periodi temporali ancora aperti alla data corrente, si può evitare di specificare questo metadato.
+
+
+
+Esempi di uso di dct:PeriodOfTime in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+       {
+          "@id": "http://dati.gov.it/resource/PeriodoTemporale/periodTimeLinkedOpenIPA",
+          "@type": "dcterms:PeriodOfTime",
+          "http://dati.gov.it/onto/dcatapit#\"startDate": {
+            "@type": "xsd:date",
+            "@value": "2016-01-01"
+          }
+        }
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+      <!-- http://dati.gov.it/resource/PeriodoTemporale/periodTimeLinkedOpenIPA -->
+        <dct:PeriodOfTime rdf:about="http://dati.gov.it/resource/PeriodoTemporale/periodTimeLinkedOpenIPA">
+            <dcatapit:startDate rdf:datatype="&xsd;date">2016-01-01</dcatapit:startDate>
+        </dct:PeriodOfTime>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC>
+        a           dct:PeriodOfTime ;
+        dcatapit:startDate  "2007-01-01"^^xsd:date ;
+        dcatapit:endDate    "2012-12-31"^^xsd:date .
+
+Come definire la copertura geografica del Dataset in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La copertura geografica del dataset è definita mediante la specifica
+della classe *Location (Localizzazione)* identificata univocamente da un
+URI (Uniform Resource Identifier).
+
+Definizione di ``dct:Location``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+dct:Location:
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+La copertura geografica del dataset.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+0..N
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Opzionale
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://purl.org/dc/terms/Location
+
+
+
+
+
+
+Elementi opzionali che descrivono la copertura geografica
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***NOME GEOGRAFICO***: ``locn:geographicName``
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Nome proprio associato all'oggetto spaziale.
+
+
+
+    Riferimento
+    http://www.w3.org/ns/locn#geographicName"
+
+
+
+    Uso
+    <b>Da indicare solo se non è disponibile un identificativo geografico o non sono note le coordinate.</b>
+
+
+
+2) ***GEOMETRIA***: ``loc:Geometry``
+''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..1
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La Geometria dell'oggetto spaziale..
+
+
+
+    Riferimento
+    http://www.w3.org/ns/locn#Geometry"
+
+
+
+    Uso
+    Le proprietà  indicate,  nella  pratica,  possono  essere  specificate  attraverso  diverse  codifiche.  La
+
+specifica GeoDCAT-AP prevede che debba essere utilizzata almeno una
+delle seguenti: GML o WKT.
+
+
+
+
+
+
+Elementi che descrivono la geometria della copertura geografica
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I seguenti elementi sono obbligatori se la geometria dell'oggetto
+spaziale che descrive la copertura geografica del dataset viene
+specificata.
+
+1) ***CRS***
+''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    L’indicazione del sistema di riferimento spaziale in cui sono rappresentati i dati. Secondo quanto indicato in <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/geodcat-ap-v10">GeoDCAT-AP</a>, nelle codifiche GML o WKT il CRS deve essere specificato come definito in GeoSPARQL.
+
+
+
+2) ***COORDINATE***
+'''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    Le coordinate dell’area geografica coperta dal Dataset.
+
+
+
+
+
+
+    Uso
+    Fornire le coordinate relative alla latitudine e longitudine, espresse nel sistema di riferimento WGS84, del riquadro di delimitazione (bounding box) dell’area geografica coperta dal dataset descritto. Se è stato già indicato un identificativo geografico come URI della classe <a href="#definizione-di-dctlocation">dct:Location</a>, le coordinate possono essere omesse.
+
+
+
+3) ***TIPO DI GEOMETRIA***
+''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    Il tipo di geometria che caratterizza l’oggetto spaziale utilizzato per la localizzazione del Dataset (es., punto (point)).
+
+
+
+Esempi di uso di dct:Location e locn:Geometry in JSON-LD, RDF/XML, RDF/Turtle
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ``JSON-LD``
+
+.. code:: json
+
+    {
+          "@id": "http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneStudiMedici_r_liguri:D.658",
+          "@type": "dcterms:Location",
+          "locn:geometry": {
+            "@type": "gsp:gmlLiteral",
+            "@value": "<gml:Envelope srsName=\"http://www.opengis.net/def/EPSG/0/4326\"><gml:lowerCorner>7.48820862370018 43.5963597132668</gml:lowerCorner><gml:upperCorner>10.0879518636137 44.849579861466</gml:upperCorner></gml:Envelope>"
+          }
+        },
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneLineaCosta -->
+        <dct:Location rdf:about="http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneLineaCosta_r_liguri:D.658">
+            <locn:geometry rdf:datatype="&gsp;gmlLiteral">&lt;gml:Envelope srsName=&quot;http://www.opengis.net/def/EPSG/0/4326&quot;&gt;&lt;gml:lowerCorner&gt;7.48820862370018 43.5963597132668&lt;/gml:lowerCorner&gt;&lt;gml:upperCorner&gt;10.0879518636137 44.849579861466&lt;/gml:upperCorner&gt;&lt;/gml:Envelope&gt;</locn:geometry>
+        </dct:Location>
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneLineaCosta_r_liguri:D.658>
+        a       dct:Location ;
+        locn:geometry   "<gml:Envelope srsName=\"http://www.opengis.net/def/EPSG/0/4326\"><gml:lowerCorner>7.48820862370018 43.5963597132668</gml:lowerCorner><gml:upperCorner>10.0879518636137 44.849579861466</gml:upperCorner></gml:Envelope>"^^gsp:gmlLiteral .
+
+
+Come definire lo Standard del Dataset in DCAT-AP\_IT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Uno standard è definito mediante la specifica della classe *Standard*
+identificata univocamente da un URI (Uniform Resource Identifier).
+
+Definizione di ``dcatapit:Standard``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+dcatapit:Standard
+
+
+
+
+
+
+
+
+
+Sottoclasse
+
+
+
+
+
+
+
+dct:Standard
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+Uno standard al quale il dataset è conforme.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+0..N
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Opzionale
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://www.dati.gov.it/onto/dcatapit#Standard
+
+
+
+
+
+
+Elementi obbligatori che descrivono lo Standard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***IDENTIFICATIVO dello STANDARD***: ``dct:identifier``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    1
+
+
+
+    Stato
+    Obbligatorio
+
+
+
+    Descrizione
+    L'identificativo dello standard.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/identifier
+
+
+
+    Uso
+    Inserire l’URL di riferimento dello Standard. Nel caso di riferimenti normativi, includere il link permanente disponibile presso la gazzetta ufficiale (e.g., www.gazzettaufficiale.it/eli/id/2005/05/16/005G0104/sg). E’ obbligatorio specificare l’identificativo qualora si scelga di descrivere standard riferibili al dataset.
+
+
+
+Elementi opzionali che descrivono lo Standard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1) ***TITOLO dello STANDARD***: ``dct:title``
+'''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    Il titolo dello standard.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/title
+
+
+
+    Uso
+    Indicare un titolo dello standard comprensibile in quanto il metadato potrebbe essere utilizzato nella ricerca e nelle indicizzazioni (evitare acronimi, evitare codici non esaustivi).  Nel caso di riferimenti normativi, indicare per esempio la tipologia di norma il numero e l’anno e inserire il titolo ufficiale della norma.
+
+
+
+2) ***DESCRIZIONE dello STANDARD***: ``dct:description``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    La descrizione dello standard.
+
+
+
+    Riferimento
+    http://purl.org/dc/terms/description
+
+
+
+    Uso
+    Indicare una descrizione per lo standard. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare lo standard riferibile al dataset. Si ricorda che nessun tag HTML è consentito,
+
+
+
+3) ***DOCUMENTAZIONE di RIFERIMENTO***: ``dcatapit:referenceDocumentation``
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Opzionale
+
+
+
+    Descrizione
+    URL attraverso i quali viene fornito l’accesso a documenti di dettaglio relativi allo Standard indicato.
+
+
+
+    Riferimento
+    http://www.dati.gov.it/onto/dcatapit#referenceDocumentation
+
+
+
+    Uso
+    Indicare uno o più URL della documentazione di riferimento relativa allo standard. Ad esempio, nel caso della raccomandazione DCAT, alcuni URL relativi alla documentazione di riferimento sono: https://www.w3.org/TR/vocab-dcat/ e https://www.w3.org/ns/dcat.rdf
+
+
+
+Esempi di uso di dcatapit:Standard in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+    {
+          "@id": "http://dati.gov.it/resource/Standard/standard-org",
+          "@type": [
+            "dcterms:Standard",
+            "http://dati.gov.it/onto/dcatapit#\"Standard"
+          ],
+          "dcterms:description": {
+            "@language": "en",
+            "@value": "The ontology of the organizations"
+          },
+          "dcterms:title": {
+            "@language": "en",
+            "@value": "W3C Org organization ontology"
+          },
+          "http://dati.gov.it/onto/dcatapit#\"referenceDocumentation": [
+            {
+              "@type": "xsd:anyURI",
+              "@value": "https://www.w3.org/TR/vocab-org/"
+            },
+            {
+              "@type": "xsd:anyURI",
+              "@value": "https://www.w3.org/ns/org.rdf"
+            }
+          ]
+        },
+
+
+
+    ``RDF/XML``
+
+.. code:: xml
+
+    <!-- http://dati.gov.it/resource/Standard/standard-org -->
+        <dcatapit:Standard rdf:about="http://dati.gov.it/resource/Standard/standard-org">
+            <rdf:type rdf:resource="&dct;Standard"/>
+            <dcatapit:referenceDocumentation rdf:datatype="&xsd;anyURI">https://www.w3.org/TR/vocab-org/</dcatapit:referenceDocumentation>
+            <dcatapit:referenceDocumentation rdf:datatype="&xsd;anyURI">https://www.w3.org/ns/org.rdf</dcatapit:referenceDocumentation>
+            <dct:title xml:lang="en">W3C Org organization ontology</dct:title>
+            <dct:description xml:lang="en">The ontology of the organizations</dct:description>
+        </dcatapit:Standard>
+
+    ``RDF/TURTLE``
+
+.. code:: turtle
+
+       <http://dati.gov.it/resource/Standard/standard-org>
+        a               dcatapit:Standard , dct:Standard ;
+        dct:title           "W3C Org organization ontology"@en ;
+        dct:description         "The ontology of the organizations"@en ;
+        dcatapit:referenceDocumentation "https://www.w3.org/ns/org.rdf"^^xsd:anyURI ;
+        dcatapit:referenceDocumentation "https://www.w3.org/TR/vocab-org/"^^xsd:anyURI .
+
+Come definire un identificativo alternativo del Dataset in DCAT-AP\_IT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+L'identificativo alternativo del dataset può essere specificato mediante
+la classe *adms:Identifier* specificata mediante un URI (Uniform
+Resource Identifier)
+
+Definizione di ``adms:Identifier``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+URI
+
+
+
+
+
+
+
+adms:Identifier
+
+
+
+
+
+
+
+
+
+Descrizione
+
+
+
+
+
+
+
+Un identificativo alternativo per il dataset.
+
+
+
+
+
+
+
+
+
+Cardinalità
+
+
+
+
+
+
+
+0..N
+
+
+
+
+
+
+
+
+
+Stato
+
+
+
+
+
+
+
+Opzionale
+
+
+
+
+
+
+
+
+
+Riferimento
+
+
+
+
+
+
+
+http://www.w3.org/ns/adms#Identifier
+
+
+
+
+
+
+Elementi raccomandati che descrivono altro identificativo del dataset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1) ***NOTAZIONE***: ``skos:notation``
+
+
+
+
+    Cardinalità
+    0..N
+
+
+
+    Stato
+    Raccomandato
+
+
+
+    Descrizione
+    Un identificativo, nel contesto dello schema di identificazione, a cui fa riferimento il suo tipo.
+
+
+
+    Riferimento
+    http://www.w3.org/2004/02/skos/core#notation
+
+
+
+Esempi di uso di adms:Identifier in JSON-LD, RDF/XML, RDF/Turtle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``JSON-LD``
+
+.. code:: json
+
+       {
+          "@id": "http://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1",
+          "@type": "adms:Identifier",
+          "skos:notation": {
+            "@value": "doi:10.1109/5.771073"
+          }
+        }
+
+    ``RDF/XML``
+
+.. code:: xml
+
+
+      <!-- http://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1 -->
+        <adms:Identifier rdf:about="http://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1">
+            <skos:notation>"doi:10.1109/5.771073"</skos:notation>
+        </adms:Identifier>
+
+
+    ``RDF/Turtle``
+
+.. code:: turtle
+
+    <hhttp://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1>
+        a       adms:Identifier ;
+        skos:notation   "doi:10.1109/5.771073" ;

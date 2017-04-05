@@ -1,0 +1,37 @@
+Alimentare il catalogo nazionale dei dati
+=========================================
+
+Questa sezione illustra le modalità di alimentazione del catalogo
+nazionale dei dati.
+
+Modalità di alimentazione
+-------------------------
+
+Esistono due modalità di alimentazione:
+
+Editor
+^^^^^^
+**editor:** applicazione Web integrata nel catalogo per l'acquisizione
+   e l'aggiornamento guidato dei metadati. L'editor alimenta
+   automaticamente il catalogo in modo da garantire la conformità al
+   profilo DCAT-AP\_IT. Tale modalità è consigliata in presenza di pochi
+   dataset che hanno anche una frequenza di aggiornamento ampia. Al
+   momento la funzionalità non è ancora attiva. Si prevede tuttavia lapossibilità per l'utente di accedere all'area privata del catalogo dei dati selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
+
+
+Harvesting
+^^^^^^^^^^
+**harvesting:** funzionalità offerta dal catalogo per l'acquisizione e
+   l'aggiornamento periodico dei metadati. L'uso di tale funzionalità
+   richiede che l'amministrazione comunichi, solo la prima volta, l'URL
+   del catalogo e indichi la modalità di harvesting (e.g., RDF
+   (DCAT-AP\_IT), CKAN, CSW). Sarà lo stesso catalogo nazionale che si
+   occuperà successivamente di raccogliere periodicamente i metadati che
+   descrivono i dati. Tale modalità è consigliata in presenza di un
+   numero elevato di dataset, soggetti anche a frequenti aggiornamenti.
+
++----------------+-------------+--------------------+
+| prova 123      | xxxx        | dsdsdsdsdsds       |
++================+=============+====================+
+| xxxxxxx        |      kkkk   | kkkokokokoko       |
++----------------+-------------+--------------------+

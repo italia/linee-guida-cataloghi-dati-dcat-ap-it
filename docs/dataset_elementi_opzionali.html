@@ -1,0 +1,1256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>2.4. Elementi opzionali &mdash; datipubblici - linee guida cataloghi dati 1.0 documentazione</title>
+               
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />   
+    <link rel="index" title="Indice" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="top" title="datipubblici - linee guida cataloghi dati 1.0 documentazione" href="index.html" />
+    <link rel="up" title="2. Dataset" href="dataset.html" />
+    <link rel="next" title="3. Distribuzione" href="distribuzione.html" />
+    <link rel="prev" title="2.3. Elementi raccomandati" href="dataset_elementi_raccomandati.html" />  
+    <script src="_static/js/modernizr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+     
+    <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-scroll">
+                <div class="wy-side-nav-search">
+                    
+
+                    <div class="branding clearfix">
+                        <div class="branding--logo">
+                            <a href="https://docs.developers.italia.it">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+                              <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h160v160H0z"/>
+                                <path fill="#fff" d="M58.28 131.956V49.918h21.5v82.184h-21.5v-.146zm84.435-63.353h-19.65v33.72c0 3.358.143 5.547.285 7.007.143 1.314.712 2.482 1.71 3.504.996 1.02 2.562 1.46 4.698 1.46l12.245-.293.997 17.52c-7.12 1.606-12.673 2.48-16.375 2.48-9.682 0-16.232-2.19-19.65-6.713-3.56-4.38-5.267-12.554-5.267-24.524V27h21.5v22.772h19.65v18.83h-.143zM25.957 74.88c-3.702 0-6.834-1.314-9.255-3.94C14.282 68.31 13 65.1 13 61.303c0-3.795 1.28-7.007 3.56-9.634 2.42-2.63 5.553-3.798 9.255-3.798 3.702 0 6.835 1.314 9.255 3.942 2.42 2.627 3.56 5.84 3.56 9.78 0 3.942-1.14 7.007-3.56 9.635-2.278 2.335-5.268 3.65-9.113 3.65z"/>
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="branding--content">
+                            <h2 class="branding--title">
+                                <span class="branding--title--root">/ <a href="https://developers.italia.it">developers</a></span>
+                                <span class="branding--title--branch">/ <a href="https://docs.developers.italia.it">docs</a></span>
+                            </h2>
+                        </div>
+                        <h3 class="branding--tagline">La community italiana degli sviluppatori di servizi pubblici</h3>
+                    </div>
+
+            
+            
+            <h1 class="project-title"><a href="index.html" class="icon icon-home"> datipubblici - linee guida cataloghi dati </a></h1>
+            
+
+
+                     
+                    
+                    <div class="version">version 1.0</div>
+                      
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> 
+                </div>
+
+                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduzione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alimentarecatalogo.html">Come alimentare un catalogo dati</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ontologia.html">Ontologia OWL di DCAT-AP_IT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profilo-overview.html">Overview profilo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalogo.html">1. Catalogo</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="dataset.html">2. Dataset</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dataset_esempi.html">2.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dataset_elementi_obbligatori.html">2.2. Elementi obbligatori</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dataset_elementi_raccomandati.html">2.3. Elementi raccomandati</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#autore-del-dataset-dct-creator">2.4.1. Autore del dataset <code class="docutils literal"><span class="pre">dct:creator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#versione-del-dataset-owl-versioninfo">2.4.2. Versione del dataset <code class="docutils literal"><span class="pre">owl:versionInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-rilascio-dataset-dct-issued">2.4.3. Data rilascio dataset <code class="docutils literal"><span class="pre">dct:issued</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pagina-di-accesso-del-dataset-dcat-landingpage">2.4.4. Pagina di accesso del dataset <code class="docutils literal"><span class="pre">dcat:landingPage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lingua-del-dataset-dct-language">2.4.5. Lingua del dataset <code class="docutils literal"><span class="pre">dct:language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parole-chiave-dataset-dcat-keyword">2.4.6. Parole chiave dataset <code class="docutils literal"><span class="pre">dcat:keyword</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset-correlato-dct-isversionof">2.4.7. Dataset correlato <code class="docutils literal"><span class="pre">dct:isVersionOf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#estensione-temporale-del-dataset-dct-temporal">2.4.8. Estensione temporale del dataset <code class="docutils literal"><span class="pre">dct:temporal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copertura-geografica-del-dataset-dct-spatial">2.4.9. Copertura geografica del dataset <code class="docutils literal"><span class="pre">dct:spatial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conformita-del-dataset-dct-conformsto">2.4.10. Conformità del dataset <code class="docutils literal"><span class="pre">dct:conformsTo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#altro-identificativo-del-dataset-adms-identifier">2.4.11. Altro identificativo del dataset <code class="docutils literal"><span class="pre">adms:identifier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="distribuzione.html">3. Distribuzione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizzazione.html">4. Soggetto o Organizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licenza.html">5. Licenza</a></li>
+<li class="toctree-l2"><a class="reference internal" href="punto-di-contatto.html">6. Punto di contatto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copertura-temporale.html">7. Copertura temporale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copertura-geografica.html">8. Copertura geografica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html">9. Standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identificativo-alternativo.html">10. Identificativo alternativo del Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errori.html">Errori comuni nell&#8217;uso di DCAT-AP_IT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="temi.html">Temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voccontrollati.html">Vocabolari Controllati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-sottotemi-dei-dati.html">Mapping temi e sotto temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-dati-temi-inspire.html">Mapping temi dati e temi INSPIRE</a></li>
+</ul>
+  
+                </div>
+            </div>
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+            
+            <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="index.html">datipubblici - linee guida cataloghi dati</a> 
+            </nav>
+
+
+            
+            <div class="wy-nav-content">
+                <div class="rst-content">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a> &raquo;</li>
+        
+          <li><a href="dataset.html">2. Dataset</a> &raquo;</li>
+        
+      <li>2.4. Elementi opzionali</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dataset_elementi_opzionali.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div itemprop="articleBody">
+                            
+  <div class="section" id="elementi-opzionali">
+<h1>2.4. Elementi opzionali<a class="headerlink" href="#elementi-opzionali" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="autore-del-dataset-dct-creator">
+<h2>2.4.1. Autore del dataset <code class="docutils literal"><span class="pre">dct:creator</span></code><a class="headerlink" href="#autore-del-dataset-dct-creator" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">Il creatore del Dataset. La proprietà lega l&#8217;oggetto (dominio)</div>
+<div class="line"><a href="#id1"><span class="problematic" id="id2">`</span></a>Dataset &lt;dataset.html&gt; a uno o più oggetti (codominio) di tipo</div>
+<div class="line"><a class="reference external" href="organizzazione.html">Agent (Soggetto)</a> (specificato mediante un</div>
+<div class="line">URI - Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/creator">http://purl.org/dc/terms/creator</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Un&#8217;organizzazione (o pubblica amministrazione) che ha materialmente prodotto il dataset. <strong>Si raccomanda di evitare l&#8217;inserimento di nomi di singole persone.</strong> Si vedano gli <a class="reference external" href="organizzazione_esempi.html">esempi riportati sull&#8217;uso della classe Agent (Soggetto).</a></p>
+</div>
+<div class="section" id="esempi-di-uso-di-dct-creator">
+<h3>2.4.1.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:creator</span></code><a class="headerlink" href="#esempi-di-uso-di-dct-creator" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+        &quot;dcterms:creator&quot;: {
+         &quot;@id&quot;: &quot;http://dati.gov.it/resource/Amministrazione/agid&quot;
+       },
+
+       altri elementi che descrivono il dataset
+
+       Dove l&#39;amministrazione creatore è specificata come:
+       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Amministrazione/agid&quot;,
+       &quot;@type&quot;: [
+         &quot;foaf:Agent&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Agent&quot;
+       ],
+       &quot;dcterms:identifier&quot;: &quot;agid&quot;,
+       &quot;foaf:name&quot;: {
+         &quot;@language&quot;: &quot;it&quot;,
+         &quot;@value&quot;: &quot;Agenzia per l&#39;Italia Digitale&quot;
+       }
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+  <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:creator</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://dati.gov.it/resource/Amministrazione/agid&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+  <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+
+  Dove l&#39;amministrazione creatore è specificata come:
+  <span class="c">&lt;!-- http://dati.gov.it/resource/Amministrazione/agid --&gt;</span>
+  <span class="nt">&lt;dcatapit:Agent</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Amministrazione/agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;foaf;Agent&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:identifier&gt;</span>agid<span class="nt">&lt;/dct:identifier&gt;</span>
+     <span class="nt">&lt;foaf:name</span> <span class="na">xml:lang=</span><span class="s">&quot;it&quot;</span><span class="nt">&gt;</span>Agenzia per l&#39;Italia Digitale<span class="nt">&lt;/foaf:name&gt;</span>
+  <span class="nt">&lt;/dcatapit:Agent&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a            dcatapit:Dataset , dcat:Dataset ;
+     dct:creator  &lt;http://dati.gov.it/resource/Amministrazione/agid&gt; ;
+     [altri elementi del dataset] .
+
+  Dove l&#39;amministrazione creatore è specificata come:
+  &lt;http://dati.gov.it/resource/Amministrazione/agid&gt;
+     a               dcatapit:Agent , foaf:Agent ;
+     dct:identifier  &quot;agid&quot; ;
+     foaf:name       &quot;Agenzia per l&#39;Italia Digitale&quot;
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="versione-del-dataset-owl-versioninfo">
+<h2>2.4.2. Versione del dataset <code class="docutils literal"><span class="pre">owl:versionInfo</span></code><a class="headerlink" href="#versione-del-dataset-owl-versioninfo" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..1</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td>La versione del Dataset</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://www.w3.org/2002/07/owl#versionInfo">http://www.w3.org/2002/07/owl#versionInfo</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Utilizzato per specificare il numero della versione o altre indicazioni della versione del dataset. <strong>Per indicare il numero della versione, è fortemente raccomandato l’utilizzo di numeri separati dal “.”.</strong> <strong>Esempi</strong> &#8211;&gt; 0.7, 1.2.3, 1.10</p>
+</div>
+<div class="section" id="esempi-di-uso-di-owl-versioninfo">
+<h3>2.4.2.1. Esempi di uso di <code class="docutils literal"><span class="pre">owl:versionInfo</span></code><a class="headerlink" href="#esempi-di-uso-di-owl-versioninfo" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+         &quot;owl:versionInfo&quot;: &quot;2.0&quot;
+      },
+
+       altri elementi che descrivono il dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+  <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;owl:versionInfo&gt;</span>2.0<span class="nt">&lt;/owl:versionInfo&gt;</span>
+     [altri elementi del dataset]
+  <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a                dcatapit:Dataset , dcat:Dataset ;
+     owl:versionInfo  &quot;2.0&quot; ;
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="data-rilascio-dataset-dct-issued">
+<h2>2.4.3. Data rilascio dataset <code class="docutils literal"><span class="pre">dct:issued</span></code><a class="headerlink" href="#data-rilascio-dataset-dct-issued" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..1</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td>La data di rilascio del Dataset</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/issued">http://purl.org/dc/terms/issued</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">E&#8217; la data in cui il dataset è reso disponibile.</p>
+</div>
+<div class="section" id="esempi-di-uso-di-dct-issued">
+<h3>2.4.3.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:issued</span></code><a class="headerlink" href="#esempi-di-uso-di-dct-issued" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>             &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC\_agid&quot;,
+ &quot;@type&quot;: [
+                 &quot;dcat:Dataset&quot;, &quot;http://dati.gov.it/onto/dcatapit#&quot;Dataset&quot;
+ ],
+             &quot;dcterms:issued&quot;: {
+    &quot;@type&quot;: &quot;xsd:date&quot;, &quot;
+    @value&quot;: &quot;2012-01-15&quot;
+ }
+ ltri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:issued</span> <span class="na">rdf:datatype=</span><span class="s">&quot;&amp;xsd;date&quot;</span><span class="nt">&gt;</span>2012-01-15<span class="nt">&lt;/dct:issued&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+         a           dcatapit:Dataset , dcat:Dataset ;
+         dct:issued  &quot;2012-01-15&quot;^^xsd:date ;
+         [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="pagina-di-accesso-del-dataset-dcat-landingpage">
+<h2>2.4.4. Pagina di accesso del dataset <code class="docutils literal"><span class="pre">dcat:landingPage</span></code><a class="headerlink" href="#pagina-di-accesso-del-dataset-dcat-landingpage" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..1</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">La pagina di accesso o landing page del Dataset. La proprietà lega l&#8217;oggetto</div>
+<div class="line">(dominio) <a class="reference external" href="dataset.html">Dataset</a> a un oggetto (codominio) di tipo foaf:Document</div>
+<div class="line">(specificato mediante un URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="https://www.w3.org/ns/dcat#landingPage">https://www.w3.org/ns/dcat#landingPage</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si raccomanda di utilizzare l’URL della pagina web che fornisce l’accesso al dataset o alla sua distribuzione o ad altre informazioni aggiuntive. La pagina di accesso è quella di origine del fornitore del dato. Non è valido l’URL di una pagina web riferibile a un sito fornito da una terza parte, come nel caso di un aggregatore.</p>
+</div>
+<div class="section" id="esempi-d-uso-di-dcat-landingpage">
+<h3>2.4.4.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:landingPage</span></code><a class="headerlink" href="#esempi-d-uso-di-dcat-landingpage" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+         &quot;dcat:landingPage&quot;: {
+         &quot;@id&quot;: &quot;http://spcdata.digitpa.gov.it/dataLotto1.html&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+    <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+       <span class="nt">&lt;dcat:landingPage</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://spcdata.digitpa.gov.it/dataLotto1.html</span> <span class="nt">/&gt;</span>
+       [altri elementi del dataset]
+    <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a                dcatapit:Dataset , dcat:Dataset ;
+     dcat:landingPage &lt;http://spcdata.digitpa.gov.it/dataLotto1.html&gt; ;
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="lingua-del-dataset-dct-language">
+<h2>2.4.5. Lingua del dataset <code class="docutils literal"><span class="pre">dct:language</span></code><a class="headerlink" href="#lingua-del-dataset-dct-language" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">La lingua del Dataset. La proprietà lega l&#8217;oggetto (dominio)
+| <a class="reference external" href="dataset.html">Dataset</a> a uno o più oggetti (codominio) di tipo dct:LinguisticSystem</div>
+<div class="line">(specificato mediante un URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/language">http://purl.org/dc/terms/language</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Indicaare una o più lingue utilizzate nel dataset. La scelta della lingua è regolata <strong>dall&#8217;uso obbligatorio</strong> del <a class="reference external" href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></p>
+</div>
+<div class="section" id="esempi-di-uso-di-dct-language">
+<h3>2.4.5.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:language</span></code><a class="headerlink" href="#esempi-di-uso-di-dct-language" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+       &quot;dcterms:language&quot;: {
+         &quot;@id&quot;: &quot;http://publications.europa.eu/resource/authority/language/ITA&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:language</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://publications.europa.eu/resource/authority/language/ITA&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a              dcatapit:Dataset , dcat:Dataset ;
+     dct:language   &lt;http://publications.europa.eu/resource/authority/language/ITA&gt; ;
+
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="parole-chiave-dataset-dcat-keyword">
+<h2>2.4.6. Parole chiave dataset <code class="docutils literal"><span class="pre">dcat:keyword</span></code><a class="headerlink" href="#parole-chiave-dataset-dcat-keyword" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td>La parole chiave associate al Dataset</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="https://www.w3.org/ns/dcat#keyword">https://www.w3.org/ns/dcat#keyword</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">inserire una o più parole chiave che consentono di identificare l&#8217;oggetto principale del dataset. Se si è scelto di inserire un tema più specifico per il dataset (soggetto o sotto tema) assicurarsi che le parole chiave siano allineate ai temi e sotto temi usati, derivanti dai relativi vocabolari controllati. <strong>Si ricorda che nella definizione delle parole chiave non sono ammessi alcuni caratteri come la virgola, l&#8217;apostrofo, la &#8220;/&#8221; e altri caratteri non alfanumerici. Pertanto NON sono ammesse parole chiave come &#8220;controllo della qualità dell&#8217;aria&#8221; oppure &#8220;cave dismesse, cave&#8221; oppure &#8220;legge 190/2012&#8221;. In questi casi si suggerisce di sostituirle rispettivamente con &#8220;controllo qualità aria&#8221; ovvero togliendo testo superfluo, &#8220;cave dismesse&#8221; &#8220;cave&#8221; ovvero separando le diverse parole chiave, &#8220;legge 190-2012&#8221; ovvero inserendo un &#8220;-&#8221;, ecc.</strong></p>
+</div>
+<div class="section" id="esempi-di-uso-di-dcat-keyword">
+<h3>2.4.6.1. Esempi di uso di <code class="docutils literal"><span class="pre">dcat:keyword</span></code><a class="headerlink" href="#esempi-di-uso-di-dcat-keyword" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+         &quot;dcat:keyword&quot;: [
+         &quot;Contratto pubblico&quot;,
+         &quot;SPC&quot;,
+         &quot;Acquisizione&quot;
+       ],
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    &lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;
+    &lt;dcatapit:Dataset rdf:about=&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;&gt;
+         &lt;rdf:type rdf:resource=&quot;&amp;dcat;Dataset&quot;/&gt;
+         &lt;dcat:keyword&gt;Acquisizione&lt;/dcat:keyword&gt;
+         &lt;dcat:keyword&gt;SPC&lt;/dcat:keyword&gt;
+         &lt;dcat:keyword&gt;Contratto pubblico&lt;/dcat:keyword&gt;
+         [altri elementi del dataset]
+     &lt;/dcatapit:Dataset&gt;
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a              dcatapit:Dataset , dcat:Dataset ;
+     dcat:keyword   &quot;Acquisizione&quot; , &quot;Contratto pubblico&quot; , &quot;SPC&quot; ;
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="dataset-correlato-dct-isversionof">
+<h2>2.4.7. Dataset correlato <code class="docutils literal"><span class="pre">dct:isVersionOf</span></code><a class="headerlink" href="#dataset-correlato-dct-isversionof" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">Un Dataset correlato che è una versione, un’edizione o un adattamento del</div>
+<div class="line">Dataset descritto. La proprietà lega l&#8217;oggetto (dominio) <a class="reference external" href="dataset.html">Dataset</a> a uno o più</div>
+<div class="line">oggetti (codominio) di tipo <a class="reference external" href="dataset.html">Dataset</a> (specificato mediante un</div>
+<div class="line">URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/isVersionOf">http://purl.org/dc/terms/isVersionOf</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Utilizzare l&#8217;URI del dataset correlato, ovvero il riferimento a una versione, un’edizione, un adattamento del dataset descritto. Per esempio, se si vuole inserire una nuova versione 2.0 di un dataset già presente nel catalogo (con versione 1.0) si richiede di indicare il riferimento al dataset già incluso nel catalogo. <strong>Si sconsiglia fortemente comunque di creare nuovi dataset per piccoli cambiamenti. E’ invece consigliato definire nuovi dataset solo in presenza di cambiamenti significativi rispetto a precedenti versioni (e.g., nuovi elementi inclusi, adattamenti significativi di alcuni elementi, ecc).</strong></p>
+</div>
+<div class="section" id="esempi-d-uso-di-dct-isversionof">
+<h3>2.4.7.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:isVersionOf</span></code><a class="headerlink" href="#esempi-d-uso-di-dct-isversionof" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+       &quot;&quot;dcterms:isVersionOf&quot;: {
+         &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid01&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:isVersionOf</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid01&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;&lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a               dcatapit:Dataset , dcat:Dataset ;
+     dct:isVersionOf &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid01&gt; ;
+
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="estensione-temporale-del-dataset-dct-temporal">
+<h2>2.4.8. Estensione temporale del dataset <code class="docutils literal"><span class="pre">dct:temporal</span></code><a class="headerlink" href="#estensione-temporale-del-dataset-dct-temporal" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">Un periodo temporale coperto dal Dataset. La proprietà lega l&#8217;oggetto</div>
+<div class="line">(dominio) <a class="reference external" href="dataset.html">Dataset</a> a uno o più oggetti (codominio)</div>
+<div class="line">di tipo <a class="reference external" href="copertura-temporale.html">Periodo di Tempo</a> (specificato mediante</div>
+<div class="line">un URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/temporal">http://purl.org/dc/terms/temporal</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Questo metadato è utilizzato per rappresentare, per esempio, casi quali “il dataset sul censimento della popolazione residente del 2011” oppure “il dataset sulla spesa pubblica dal 2000 al 2015&#8221;. Per l&#8217;uso pratico di questa proprietà si vedano gli <a class="reference external" href="copertura-temporale_esempi.html">esempi d&#8217;uso per la copertura temporale del Dataset.</a></p>
+</div>
+<div class="section" id="esempi-d-uso-di-dct-temporal">
+<h3>2.4.8.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:temporal</span></code><a class="headerlink" href="#esempi-d-uso-di-dct-temporal" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+       &quot;dcterms:temporal&quot;: {
+         &quot;@id&quot;: &quot;http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:temporal</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;&lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a             dcatapit:Dataset , dcat:Dataset ;
+     dct:temporal  &lt;http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC&gt; ;
+
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="copertura-geografica-del-dataset-dct-spatial">
+<h2>2.4.9. Copertura geografica del dataset <code class="docutils literal"><span class="pre">dct:spatial</span></code><a class="headerlink" href="#copertura-geografica-del-dataset-dct-spatial" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">Un&#8217;area geografica coperta dal Dataset. La proprietà lega l&#8217;oggetto (dominio)</div>
+<div class="line"><a class="reference external" href="dataset.html">Dataset</a> a uno o più oggetti (codominio) di tipo</div>
+<div class="line"><a class="reference external" href="copertura-geografica.html">Localizzazione</a> (specificato mediante un</div>
+<div class="line">URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/spatial">http://purl.org/dc/terms/spatial</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Per l&#8217;uso pratico di questa proprietà si vedano gli <a class="reference external" href="copertura-geografica_esempi.html">esempi d&#8217;uso per la copertura geografica del Dataset</a></p>
+</div>
+<div class="section" id="esempi-d-uso-di-dct-spatial">
+<h3>2.4.9.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:spatial</span></code><a class="headerlink" href="#esempi-d-uso-di-dct-spatial" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+       &quot;dcterms:spatial&quot;: {
+         &quot;@id&quot;: &quot;http://www.geonames.org/3169070&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:spatial</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://www.geonames.org/3169070&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a           dcatapit:Dataset , dcat:Dataset ;
+     dct:spatial &lt;http://www.geonames.org/3169070&gt; ;
+
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="conformita-del-dataset-dct-conformsto">
+<h2>2.4.10. Conformità del dataset <code class="docutils literal"><span class="pre">dct:conformsTo</span></code><a class="headerlink" href="#conformita-del-dataset-dct-conformsto" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">Una regola implementativa o altra specifica (e.g., una norma) a cui il</div>
+<div class="line">Dataset è conforme. La proprietà lega l&#8217;oggetto (dominio)</div>
+<div class="line"><a class="reference external" href="dataset.html">Dataset</a> a un o più oggetti (codominio) di tipo <a class="reference external" href="standard.html">Standard</a></div>
+<div class="line">(specificato mediante un URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://purl.org/dc/terms/conformsTo">http://purl.org/dc/terms/conformsTo</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Specificare uno o più standard riferibili al dataset. Si possono specificare sia standard tecnici (anche de-facto) come per esempio DCAT, ISO/IEC 25012, CSW, ecc., sia riferimenti normativi (e.g., Decreto legislativo n.82/2005 - Codice dell’Amministrazione Digitale). Per l&#8217;uso pratico di questa proprietà si vedano gli <a class="reference external" href="standard_esempi.html">esempi d&#8217;uso per lo Standard del Dataset</a></p>
+</div>
+<div class="section" id="esempi-di-uso-di-dct-conformsto">
+<h3>2.4.10.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:conformsTo</span></code><a class="headerlink" href="#esempi-di-uso-di-dct-conformsto" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+       &quot;dcterms:conformsTo&quot;: {
+         &quot;@id&quot;: &quot;http://dati.gov.it/resource/Standard/standard-org&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;dct:conformsTo</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://dati.gov.it/resource/Standard/standard-org&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;&lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a               dcatapit:Dataset , dcat:Dataset ;
+     dct:conformsTo  &lt;http://dati.gov.it/resource/Standard/standard-org&gt; ;
+
+     [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="altro-identificativo-del-dataset-adms-identifier">
+<h2>2.4.11. Altro identificativo del dataset <code class="docutils literal"><span class="pre">adms:identifier</span></code><a class="headerlink" href="#altro-identificativo-del-dataset-adms-identifier" title="Link a questa intestazione">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">elemento</th>
+<th class="head">valore</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cardinalità</td>
+<td>0..N</td>
+</tr>
+<tr class="row-odd"><td>Stato</td>
+<td>Opzionale</td>
+</tr>
+<tr class="row-even"><td>Descrizione</td>
+<td><div class="first last line-block">
+<div class="line">Un eventuale identificativo secondario del Dataset (e.g., DOI, ISBN, W3ID, ecc.).</div>
+<div class="line">La proprietà lega l&#8217;oggetto (dominio) <a class="reference external" href="dataset.html">Dataset</a> a uno o più oggetti</div>
+<div class="line">(codominio) di tipo <a class="reference external" href="identificativo-alternativo.html">Altro Identificativo</a></div>
+<div class="line">(specificato mediante un URI- Uniform Resource Identifier)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Riferimento</td>
+<td><a class="reference external" href="http://www.w3.org/ns/adms#identifier">http://www.w3.org/ns/adms#identifier</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Specificare uno o più identificativi secondari per il dataset. Per esempio, un identificativo secondario può essere un identificativo DOI (e.g., doi:10.10.1038/nphys1170) oppure un identificativo permanente per il Web W3ID (e.g., http://w3id.org/food) <strong>oppure un identificativo stabile utilizzato in cataloghi locali</strong>. Per l&#8217;uso pratico di questa proprietà si vedano gli <a class="reference external" href="identificativo-alternativo_esempi.html">esempi d&#8217;uso per l&#8217;Identificativo Alternativo del Dataset</a></p>
+</div>
+<div class="section" id="esempi-di-uso-di-adms-identifier">
+<h3>2.4.11.1. Esempi di uso di <code class="docutils literal"><span class="pre">adms:identifier</span></code><a class="headerlink" href="#esempi-di-uso-di-adms-identifier" title="Link a questa intestazione">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">JSON-LD</span></code></p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>       &quot;@id&quot;: &quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;,
+       &quot;@type&quot;: [
+         &quot;dcat:Dataset&quot;,
+         &quot;http://dati.gov.it/onto/dcatapit#\&quot;Dataset&quot;
+       ],
+       &quot;adms:identifier&quot;: {
+         &quot;@id&quot;: &quot;http://dati.gov.it/resource/Identifier/ContrattiSPC_agid_altroID&quot;
+       },
+
+       altri elementi del dataset
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/XML</span></code></p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid --&gt;</span>
+ <span class="nt">&lt;dcatapit:Dataset</span> <span class="na">rdf:about=</span><span class="s">&quot;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;rdf:type</span> <span class="na">rdf:resource=</span><span class="s">&quot;&amp;dcat;Dataset&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;adms:identifier</span> <span class="na">rdf:resource=</span><span class="s">&quot;http://dati.gov.it/resource/Identifier/ContrattiSPC_agid_altroID&quot;</span><span class="nt">/&gt;</span>
+     [altri elementi del dataset]
+ <span class="nt">&lt;/dcatapit:Dataset&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal"><span class="pre">RDF/Turtle</span></code></p>
+<div class="highlight-turtle"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  &lt;&lt;http://dati.gov.it/resource/Dataset/ContrattiSPC_agid&gt;
+     a                dcatapit:Dataset , dcat:Dataset ;
+     adms:identifier  &lt;http://dati.gov.it/resource/Identifier/ContrattiSPC_agid_altroID&gt; ;
+
+    [altri elementi del dataset]
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+                        </div>
+                        <div class="articleComments">
+                            
+                        </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="distribuzione.html" class="btn float-right" title="3. Distribuzione" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dataset_elementi_raccomandati.html" class="btn" title="2.3. Elementi raccomandati" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, AgID - Agenzia per l&#39;Italia Digitale.
+      Ultimo aggiornamento 06/04/2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using the official <a href="https://github.com/italia/sphinx_italia_theme">Italia theme</a> based on the <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+ 
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: './',
+            VERSION: '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE: true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>   
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+      
+    <script type="text/javascript">
+        jQuery(function() {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+     
+
+</body>
+
+</html>

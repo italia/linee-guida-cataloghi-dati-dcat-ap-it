@@ -1,0 +1,14 @@
+Guida tecnica al catalogo dei dati
+==================================
+
+Questa è la documentazione tecnica relativa al catalogo dei dati (attualmente ``dati.gov.it``).
+Essa racchiuda la guida pratica al profilo DCAT-AP_IT, una descrizione e i riferimenti principali all'ontologia in OWL (Ontology Web Language) del profilo, le indicazioni sulle modalità previste di alimentazione del catalogo, le indicazioni sui mapping rispetto ai temi dei dataset previsti dal profilo, l'elenco dei vocabolari controllati da utilizzare, nonché una serie di errori comuni nell'uso di DCAT-AP_IT, e relativa gestione.
+
+Lo scopo di questa documentazione è quello di guidare le Amministrazioni nell'adeguamento al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nelle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
+In particolare a presente guida tecnica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le Amministrazioni nella predisposizione dei metadati per abilitare la modalità di alimentazione del catalogo detta harvesting, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle.
+
+**Versione**
+1.0
+
+**Licenza:**
+CC-BY 4.0 (Creative Commons Attribution).

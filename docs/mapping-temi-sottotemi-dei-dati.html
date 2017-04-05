@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Mapping temi e sotto temi dei dati &mdash; datipubblici - linee guida cataloghi dati 1.0 documentazione</title>
+               
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />   
+    <link rel="index" title="Indice" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="top" title="datipubblici - linee guida cataloghi dati 1.0 documentazione" href="index.html" />
+    <link rel="next" title="Mapping temi dati e temi INSPIRE" href="mapping-temi-dati-temi-inspire.html" />
+    <link rel="prev" title="Vocabolari Controllati" href="voccontrollati.html" />  
+    <script src="_static/js/modernizr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+     
+    <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-scroll">
+                <div class="wy-side-nav-search">
+                    
+
+                    <div class="branding clearfix">
+                        <div class="branding--logo">
+                            <a href="https://docs.developers.italia.it">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+                              <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h160v160H0z"/>
+                                <path fill="#fff" d="M58.28 131.956V49.918h21.5v82.184h-21.5v-.146zm84.435-63.353h-19.65v33.72c0 3.358.143 5.547.285 7.007.143 1.314.712 2.482 1.71 3.504.996 1.02 2.562 1.46 4.698 1.46l12.245-.293.997 17.52c-7.12 1.606-12.673 2.48-16.375 2.48-9.682 0-16.232-2.19-19.65-6.713-3.56-4.38-5.267-12.554-5.267-24.524V27h21.5v22.772h19.65v18.83h-.143zM25.957 74.88c-3.702 0-6.834-1.314-9.255-3.94C14.282 68.31 13 65.1 13 61.303c0-3.795 1.28-7.007 3.56-9.634 2.42-2.63 5.553-3.798 9.255-3.798 3.702 0 6.835 1.314 9.255 3.942 2.42 2.627 3.56 5.84 3.56 9.78 0 3.942-1.14 7.007-3.56 9.635-2.278 2.335-5.268 3.65-9.113 3.65z"/>
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="branding--content">
+                            <h2 class="branding--title">
+                                <span class="branding--title--root">/ <a href="https://developers.italia.it">developers</a></span>
+                                <span class="branding--title--branch">/ <a href="https://docs.developers.italia.it">docs</a></span>
+                            </h2>
+                        </div>
+                        <h3 class="branding--tagline">La community italiana degli sviluppatori di servizi pubblici</h3>
+                    </div>
+
+            
+            
+            <h1 class="project-title"><a href="index.html" class="icon icon-home"> datipubblici - linee guida cataloghi dati </a></h1>
+            
+
+
+                     
+                    
+                    <div class="version">version 1.0</div>
+                      
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> 
+                </div>
+
+                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduzione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alimentarecatalogo.html">Come alimentare un catalogo dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temi.html">Temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voccontrollati.html">Vocabolari Controllati</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mapping temi e sotto temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-dati-temi-inspire.html">Mapping temi dati e temi INSPIRE</a></li>
+</ul>
+  
+                </div>
+            </div>
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+            
+            <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="index.html">datipubblici - linee guida cataloghi dati</a> 
+            </nav>
+
+
+            
+            <div class="wy-nav-content">
+                <div class="rst-content">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Mapping temi e sotto temi dei dati</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mapping-temi-sottotemi-dei-dati.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div itemprop="articleBody">
+                            
+  <div class="section" id="mapping-temi-e-sotto-temi-dei-dati">
+<h1>Mapping temi e sotto temi dei dati<a class="headerlink" href="#mapping-temi-e-sotto-temi-dei-dati" title="Link a questa intestazione">¶</a></h1>
+<p>La seguente tabella rappresenta un mapping, a livello di macro-categorie, tra i temi dei dati del profilo di metadatazione DCAT-AP_IT e i sotto temi per i dati che sono specificati attraverso l&#8217;uso del vocabolario controllato Europeo <a class="reference external" href="http://eurovoc.europa.eu/">Eurovoc</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Temi dei dati (categorie DCAT-AP)</th>
+<th class="head">Sotto temi dei dati (Categorie Eurovoc)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Agricoltura, pesca, silvicoltura e prodotti alimentari</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100245&amp;language=it&amp;view=mt&amp;ifacelang=it">5606 politica agricola</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100246&amp;language=it&amp;view=mt&amp;ifacelang=it">5611 produzione e strutture agricole</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100247&amp;language=it&amp;view=mt&amp;ifacelang=it">5616 orientamento produttivo agricolo</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100248&amp;language=it&amp;view=mt&amp;ifacelang=it">5621 coltivazione di terreni agricoli</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100249&amp;language=it&amp;view=mt&amp;ifacelang=it">5626 mezzo di produzione agricola</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100250&amp;language=it&amp;view=mt&amp;ifacelang=it">5631 attività agricola</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100251&amp;language=it&amp;view=mt&amp;ifacelang=it">5636 foresta</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100252&amp;language=it&amp;view=mt&amp;ifacelang=it">5641 pesca</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100253&amp;language=it&amp;view=mt&amp;ifacelang=it">6006 prodotto vegetale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100254&amp;language=it&amp;view=mt&amp;ifacelang=it">6011 prodotto animale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100255&amp;language=it&amp;view=mt&amp;ifacelang=it">6016 prodotto agricolo trasformato</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100256&amp;language=it&amp;view=mt&amp;ifacelang=it">6021 bevande e zucchero</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100257&amp;language=it&amp;view=mt&amp;ifacelang=it">6026 prodotto alimentare</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100258&amp;language=it&amp;view=mt&amp;ifacelang=it">6031 industria agro-alimentare</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100259&amp;language=it&amp;view=mt&amp;ifacelang=it">6036 tecnologia alimentare</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Energia</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100263&amp;language=it&amp;view=mt&amp;ifacelang=it">6606 politica energetica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100264&amp;language=it&amp;view=mt&amp;ifacelang=it">6611 industria carboniera e mineraria</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100265&amp;language=it&amp;view=mt&amp;ifacelang=it">6616 industria petrolifera</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100266&amp;language=it&amp;view=mt&amp;ifacelang=it">6621 industria nucleare ed elettrica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100267&amp;language=it&amp;view=mt&amp;ifacelang=it">6626 energia dolce</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Regioni e Città</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100277&amp;language=it&amp;view=mt&amp;ifacelang=it">7206 Europa</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100278&amp;language=it&amp;view=mt&amp;ifacelang=it">7211 regioni degli Stati membri dell&#8217;Unione europea</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100279&amp;language=it&amp;view=mt&amp;ifacelang=it">7216 America</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100280&amp;language=it&amp;view=mt&amp;ifacelang=it">7221 Africa</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100281&amp;language=it&amp;view=mt&amp;ifacelang=it">7226 Asia-Oceania</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100282&amp;language=it&amp;view=mt&amp;ifacelang=it">7231 geografia economica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100283&amp;language=it&amp;view=mt&amp;ifacelang=it">7236 geografia politica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100284&amp;language=it&amp;view=mt&amp;ifacelang=it">7241 paesi e territori d&#8217;oltremare</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Trasporti</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100237&amp;language=it&amp;view=mt&amp;ifacelang=it">4806 politica dei trasporti</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100238&amp;language=it&amp;view=mt&amp;ifacelang=it">4811 organizzazione dei trasporti</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100239&amp;language=it&amp;view=mt&amp;ifacelang=it">4816 trasporti terrestri</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100240&amp;language=it&amp;view=mt&amp;ifacelang=it">4821 trasporti marittimi e fluviali</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100241&amp;language=it&amp;view=mt&amp;ifacelang=it">4826 trasporti aerei e spaziali</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Economia e Finanza</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100185&amp;language=it&amp;view=mt&amp;ifacelang=it">1606 politica economica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100186&amp;language=it&amp;view=mt&amp;ifacelang=it">1611 crescita economica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100187&amp;language=it&amp;view=mt&amp;ifacelang=it">1616 regione e politica regionale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100188&amp;language=it&amp;view=mt&amp;ifacelang=it">1621 struttura economica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100189&amp;language=it&amp;view=mt&amp;ifacelang=it">1626 contabilità nazionale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100190&amp;language=it&amp;view=mt&amp;ifacelang=it">1631 analisi economica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100198&amp;language=it&amp;view=mt&amp;ifacelang=it">2406 relazioni monetarie</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100199&amp;language=it&amp;view=mt&amp;ifacelang=it">2411 economia monetaria</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100200&amp;language=it&amp;view=mt&amp;ifacelang=it">2416 istituti finanziari e di credito</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100201&amp;language=it&amp;view=mt&amp;ifacelang=it">2421 libera circolazione dei capitali</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100202&amp;language=it&amp;view=mt&amp;ifacelang=it">2426 investimenti e finanziamenti</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100203&amp;language=it&amp;view=mt&amp;ifacelang=it">2431 assicurazioni</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100204&amp;language=it&amp;view=mt&amp;ifacelang=it">2436 finanze pubbliche e politica di bilancio</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100205&amp;language=it&amp;view=mt&amp;ifacelang=it">2441 bilancio</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100206&amp;language=it&amp;view=mt&amp;ifacelang=it">2446 fiscalitò</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100207&amp;language=it&amp;view=mt&amp;ifacelang=it">2451 prezzi</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100191&amp;language=it&amp;view=mt&amp;ifacelang=it">2006 politica commerciale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100192&amp;language=it&amp;view=mt&amp;ifacelang=it">2011 politica tariffaria</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100193&amp;language=it&amp;view=mt&amp;ifacelang=it">2016 scambi economici</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100194&amp;language=it&amp;view=mt&amp;ifacelang=it">2021 commercio internazionale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100195&amp;language=it&amp;view=mt&amp;ifacelang=it">2026 consumo</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100196&amp;language=it&amp;view=mt&amp;ifacelang=it">2031 commercializzazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100197&amp;language=it&amp;view=mt&amp;ifacelang=it">2036 distribuzione commerciale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100226&amp;language=it&amp;view=mt&amp;ifacelang=it">4006 organizzazione aziendale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100227&amp;language=it&amp;view=mt&amp;ifacelang=it">4011 tipo d&#8217;impresa</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100228&amp;language=it&amp;view=mt&amp;ifacelang=it">4016 forma giuridica di società</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100229&amp;language=it&amp;view=mt&amp;ifacelang=it">4021 gestione amministrativa</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100230&amp;language=it&amp;view=mt&amp;ifacelang=it">4026 gestione contabile</a>-</div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100231&amp;language=it&amp;view=mt&amp;ifacelang=it">4031 concorrenza</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100268&amp;language=it&amp;view=mt&amp;ifacelang=it">6806 politiche e strutture industriali</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100269&amp;language=it&amp;view=mt&amp;ifacelang=it">6811 chimica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100270&amp;language=it&amp;view=mt&amp;ifacelang=it">6816 metallurgia e siderurgia</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100270&amp;language=it&amp;view=mt&amp;ifacelang=it">6821 industria meccanica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100272&amp;language=it&amp;view=mt&amp;ifacelang=it">6826 elettronica ed elettrotecnica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100273&amp;language=it&amp;view=mt&amp;ifacelang=it">6831 edilizia e lavori pubblici</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100274&amp;language=it&amp;view=mt&amp;ifacelang=it">6836 industria del legno</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100275&amp;language=it&amp;view=mt&amp;ifacelang=it">6841 industria del cuoio e dei prodotti tessili</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100276&amp;language=it&amp;view=mt&amp;ifacelang=it">6846 industrie varie</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Tematiche internazionali</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100285&amp;language=it&amp;view=mt&amp;ifacelang=it">7606 Nazioni Unite</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100286&amp;language=it&amp;view=mt&amp;ifacelang=it">7611 organizzazioni europee</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100287&amp;language=it&amp;view=mt&amp;ifacelang=it">7616 organizzazioni extraeuropee</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100288&amp;language=it&amp;view=mt&amp;ifacelang=it">7621 organizzazioni mondiali</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100289&amp;language=it&amp;view=mt&amp;ifacelang=it">7626 organizzazioni non governative</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100170&amp;language=it&amp;view=mt&amp;ifacelang=it">0806 politica internazionale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100171&amp;language=it&amp;view=mt&amp;ifacelang=it">0811 politica di cooperazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100171&amp;language=it&amp;view=mt&amp;ifacelang=it">0816 equilibrio internazionale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100173&amp;language=it&amp;view=mt&amp;ifacelang=it">0821 difesa</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Governo e Settore Pubblico</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100163&amp;language=it&amp;view=mt&amp;ifacelang=it">0406 quadro politico</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100164&amp;language=it&amp;view=mt&amp;ifacelang=it">0411 partito politico</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100165&amp;language=it&amp;view=mt&amp;ifacelang=it">0416 procedura elettorale e voto</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100166&amp;language=it&amp;view=mt&amp;ifacelang=it">0421 Parlamento</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100167&amp;language=it&amp;view=mt&amp;ifacelang=it">0426 lavori parlamentari</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100168&amp;language=it&amp;view=mt&amp;ifacelang=it">0431 vita politica e sicurezza pubblica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100169&amp;language=it&amp;view=mt&amp;ifacelang=it">0436 potere esecutivo e amministrazione pubblica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100174&amp;language=it&amp;view=mt&amp;ifacelang=it">1006 istituzioni dell&#8217;Unione europea e funzione pubblica europea</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100175&amp;language=it&amp;view=mt&amp;ifacelang=it">1011 diritto dell&#8217;Unione Europea</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100176&amp;language=it&amp;view=mt&amp;ifacelang=it">1016 costruzione europea</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100177&amp;language=it&amp;view=mt&amp;ifacelang=it">1021 finanze dell&#8217;Unione europea</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Giustizia, sistema giuridico e sicurezza pubblica</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100178&amp;language=it&amp;view=mt&amp;ifacelang=it">1206 fonti e branche del diritto</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100179&amp;language=it&amp;view=mt&amp;ifacelang=it">1211 diritto civile</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100180&amp;language=it&amp;view=mt&amp;ifacelang=it">1216 diritto penale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100181&amp;language=it&amp;view=mt&amp;ifacelang=it">1221 giustizia</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100182&amp;language=it&amp;view=mt&amp;ifacelang=it">1226 organizzazione della giustizia</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100183&amp;language=it&amp;view=mt&amp;ifacelang=it">1231 diritto internazionale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100184&amp;language=it&amp;view=mt&amp;ifacelang=it">1236 diritti e libertà</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Ambiente</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100242&amp;language=it&amp;view=mt&amp;ifacelang=it">5206 politica dell&#8217;ambiente</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100243&amp;language=it&amp;view=mt&amp;ifacelang=it">5211 ambiente naturale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100244&amp;language=it&amp;view=mt&amp;ifacelang=it">5216 degrado ambientale</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Istruzione, Cultura e Sport</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100217&amp;language=it&amp;view=mt&amp;ifacelang=it">3206 istruzione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100218&amp;language=it&amp;view=mt&amp;ifacelang=it">3211 insegnamento</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100219&amp;language=it&amp;view=mt&amp;ifacelang=it">3216 organizzazione scolastica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100220&amp;language=it&amp;view=mt&amp;ifacelang=it">3221 documentazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100221&amp;language=it&amp;view=mt&amp;ifacelang=it">3226 comunicazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100222&amp;language=it&amp;view=mt&amp;ifacelang=it">3231 informazione ed elaborazione dell&#8217;informazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100223&amp;language=it&amp;view=mt&amp;ifacelang=it">3236 informatica e trattamento dei dati</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100213&amp;language=it&amp;view=mt&amp;ifacelang=it">2831 cultura e religione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;view=pt&amp;termuri=http://eurovoc.europa.eu/251915&amp;language=it">2826 vita sociale - tempo libero</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Salute</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100215&amp;language=it&amp;view=mt&amp;ifacelang=it">2841 salute</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Popolazione e Società</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100208&amp;language=it&amp;view=mt&amp;ifacelang=it">2806 famiglia</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100209&amp;language=it&amp;view=mt&amp;ifacelang=it">2811 migrazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100210&amp;language=it&amp;view=mt&amp;ifacelang=it">2816 demografia e popolazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100211&amp;language=it&amp;view=mt&amp;ifacelang=it">2821 quadro sociale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100212&amp;language=it&amp;view=mt&amp;ifacelang=it">2826 vita sociale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100214&amp;language=it&amp;view=mt&amp;ifacelang=it">2836 protezione sociale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100216&amp;language=it&amp;view=mt&amp;ifacelang=it">2846 urbanistica ed edilizia</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100232&amp;language=it&amp;view=mt&amp;ifacelang=it">4406 occupazione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100233&amp;language=it&amp;view=mt&amp;ifacelang=it">4411 mercato del lavoro</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100234&amp;language=it&amp;view=mt&amp;ifacelang=it">4416 condizioni e organizzazioni del lavoro</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100235&amp;language=it&amp;view=mt&amp;ifacelang=it">4421 amministrazione e remunerazione del personale</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100236&amp;language=it&amp;view=mt&amp;ifacelang=it">4426 rapporti di lavoro e diritto del lavoro</a></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Scienza e Tecnologia</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100224&amp;language=it&amp;view=mt&amp;ifacelang=it">3606 scienze naturali e applicate</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100225&amp;language=it&amp;view=mt&amp;ifacelang=it">3611 scienze umane</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100260&amp;language=it&amp;view=mt&amp;ifacelang=it">6406 produzione</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100261&amp;language=it&amp;view=mt&amp;ifacelang=it">6411 tecnologia e regolamentazione tecnica</a></div>
+<div class="line"><a class="reference external" href="http://eurovoc.europa.eu/drupal/?q=it/request&amp;mturi=http://eurovoc.europa.eu/100262&amp;language=it&amp;view=mt&amp;ifacelang=it">6416 ricerca e proprietà intellettuale</a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+                        </div>
+                        <div class="articleComments">
+                            
+                        </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mapping-temi-dati-temi-inspire.html" class="btn float-right" title="Mapping temi dati e temi INSPIRE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="voccontrollati.html" class="btn" title="Vocabolari Controllati" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, AgID - Agenzia per l&#39;Italia Digitale.
+      Ultimo aggiornamento 06/04/2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using the official <a href="https://github.com/italia/sphinx_italia_theme">Italia theme</a> based on the <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+ 
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: './',
+            VERSION: '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE: true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>   
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+      
+    <script type="text/javascript">
+        jQuery(function() {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+     
+
+</body>
+
+</html>

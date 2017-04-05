@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Linee Guida per i cataloghi dati &mdash; datipubblici - linee guida cataloghi dati 1.0 documentazione</title>
+               
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />   
+    <link rel="index" title="Indice" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="top" title="datipubblici - linee guida cataloghi dati 1.0 documentazione" href="#" />
+    <link rel="next" title="Introduzione" href="intro.html" />  
+    <script src="_static/js/modernizr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+     
+    <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-scroll">
+                <div class="wy-side-nav-search">
+                    
+
+                    <div class="branding clearfix">
+                        <div class="branding--logo">
+                            <a href="https://docs.developers.italia.it">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+                              <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h160v160H0z"/>
+                                <path fill="#fff" d="M58.28 131.956V49.918h21.5v82.184h-21.5v-.146zm84.435-63.353h-19.65v33.72c0 3.358.143 5.547.285 7.007.143 1.314.712 2.482 1.71 3.504.996 1.02 2.562 1.46 4.698 1.46l12.245-.293.997 17.52c-7.12 1.606-12.673 2.48-16.375 2.48-9.682 0-16.232-2.19-19.65-6.713-3.56-4.38-5.267-12.554-5.267-24.524V27h21.5v22.772h19.65v18.83h-.143zM25.957 74.88c-3.702 0-6.834-1.314-9.255-3.94C14.282 68.31 13 65.1 13 61.303c0-3.795 1.28-7.007 3.56-9.634 2.42-2.63 5.553-3.798 9.255-3.798 3.702 0 6.835 1.314 9.255 3.942 2.42 2.627 3.56 5.84 3.56 9.78 0 3.942-1.14 7.007-3.56 9.635-2.278 2.335-5.268 3.65-9.113 3.65z"/>
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="branding--content">
+                            <h2 class="branding--title">
+                                <span class="branding--title--root">/ <a href="https://developers.italia.it">developers</a></span>
+                                <span class="branding--title--branch">/ <a href="https://docs.developers.italia.it">docs</a></span>
+                            </h2>
+                        </div>
+                        <h3 class="branding--tagline">La community italiana degli sviluppatori di servizi pubblici</h3>
+                    </div>
+
+            
+            
+            <h1 class="project-title"><a href="#" class="icon icon-home"> datipubblici - linee guida cataloghi dati </a></h1>
+            
+
+
+                     
+                    
+                    <div class="version">version 1.0</div>
+                      
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> 
+                </div>
+
+                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                          <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduzione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alimentarecatalogo.html">Come alimentare un catalogo dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temi.html">Temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voccontrollati.html">Vocabolari Controllati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-sottotemi-dei-dati.html">Mapping temi e sotto temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-dati-temi-inspire.html">Mapping temi dati e temi INSPIRE</a></li>
+</ul>
+  
+                </div>
+            </div>
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+            
+            <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="#">datipubblici - linee guida cataloghi dati</a> 
+            </nav>
+
+
+            
+            <div class="wy-nav-content">
+                <div class="rst-content">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Linee Guida per i cataloghi dati</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div itemprop="articleBody">
+                            
+  <div class="section" id="linee-guida-per-i-cataloghi-dati">
+<h1>Linee Guida per i cataloghi dati<a class="headerlink" href="#linee-guida-per-i-cataloghi-dati" title="Link a questa intestazione">¶</a></h1>
+<p>Questo progetto rappresenta le linee guida per l&#8217;alimentazione e gestione di cataloghi dati secondo il profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nelle <a class="reference external" href="http://www.dati.gov.it/sites/default/files/LG2016_0.pdf">linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)</a>.</p>
+<p>Le presenti linee guida forniscono indicazioni sui temi dei dati, sui vocabolari controllati da utilizzare nonché una descrizione degli elementi principali del profilo di metadazione con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati per abilitare la modalità di alimentazione del catalogo detta harvesting, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle.</p>
+<p><strong>Licenza:</strong> CC-BY 4.0 (Creative Commons Attribution).</p>
+<div class="section" id="indice-dei-contenuti">
+<h2>Indice dei contenuti<a class="headerlink" href="#indice-dei-contenuti" title="Link a questa intestazione">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduzione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alimentarecatalogo.html">Come alimentare un catalogo dati</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="alimentarecatalogo.html#editor">Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alimentarecatalogo.html#harvesting">Harvesting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ontologia.html">Ontologia OWL di DCAT-AP_IT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profilo-overview.html">Overview profilo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalogo.html">1. Catalogo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="catalogo_esempi.html">1.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catalogo_elementi_obbligatori.html">1.2. Elementi obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_obbligatori.html#titolo-dct-title">1.2.1. Titolo <code class="docutils literal"><span class="pre">dct:title</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_obbligatori.html#esempi-d-uso-di-dct-title">1.2.1.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_obbligatori.html#descrizione-dct-description">1.2.2. Descrizione <code class="docutils literal"><span class="pre">dct:description</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_obbligatori.html#esempi-d-uso-di-dct-description">1.2.2.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:description</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_obbligatori.html#editore-dct-publisher">1.2.3. Editore <code class="docutils literal"><span class="pre">dct:publisher</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_obbligatori.html#esempi-d-uso-di-dct-publisher">1.2.3.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:publisher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_obbligatori.html#data-ultima-modifica-dct-modified">1.2.4. Data ultima modifica <code class="docutils literal"><span class="pre">dct:modified</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_obbligatori.html#esempi-d-uso-di-dct-modified">1.2.4.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:modified</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_obbligatori.html#dataset-dcat-dataset">1.2.5. Dataset <code class="docutils literal"><span class="pre">dcat:dataset</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_obbligatori.html#esempi-d-uso-di-dcat-dataset">1.2.5.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:dataset</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="catalogo_elementi_raccomandati.html">1.3. Elementi raccomandati</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_raccomandati.html#homepage-foaf-homepage">1.3.1. Homepage <code class="docutils literal"><span class="pre">foaf:homepage</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_raccomandati.html#esempi-d-uso-di-foaf-homepage">1.3.1.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">foaf:homepage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_raccomandati.html#lingua-dct-language">1.3.2. Lingua <code class="docutils literal"><span class="pre">dct:language</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_raccomandati.html#esempi-d-uso-di-dct-language">1.3.2.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:language</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_raccomandati.html#data-di-rilascio-dct-issued">1.3.3. Data di rilascio <code class="docutils literal"><span class="pre">dct:issued</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_raccomandati.html#esempi-di-uso-di-dct-issued">1.3.3.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:issued</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="catalogo_elementi_raccomandati.html#temi-dcat-themetaxonomy">1.3.4. Temi <code class="docutils literal"><span class="pre">dcat:themeTaxonomy</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="catalogo_elementi_raccomandati.html#esempi-d-uso-di-dcat-themetaxonomy">1.3.4.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:themeTaxonomy</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dataset.html">2. Dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dataset_esempi.html">2.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dataset_elementi_obbligatori.html">2.2. Elementi obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#identificativo-del-dataset-dct-identifier">2.2.1. Identificativo del dataset <code class="docutils literal"><span class="pre">dct:identifier</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-d-uso-di-dct-identifier">2.2.1.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:identifier</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#titolo-del-dataset-dct-title">2.2.2. Titolo del dataset <code class="docutils literal"><span class="pre">dct:title</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-di-uso-di-dct-title">2.2.2.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#descrizione-del-dataset-dct-description">2.2.3. Descrizione del dataset <code class="docutils literal"><span class="pre">dct:description</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-di-uso-di-dct-description">2.2.3.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:description</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#ultima-modifica-del-dataset-dct-modified">2.2.4. Ultima modifica del dataset <code class="docutils literal"><span class="pre">dct:modified</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-di-uso-di-dct-modified">2.2.4.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:modified</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#temi-del-dataset-dcat-theme">2.2.5. Temi del dataset <code class="docutils literal"><span class="pre">dcat:theme</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-d-uso-di-dcat-theme">2.2.5.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:theme</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#titolare-del-dataset-dct-rightsholder">2.2.6. Titolare del dataset <code class="docutils literal"><span class="pre">dct:rightsHolder</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-di-uso-di-dct-rightsholder">2.2.6.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:rightsHolder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#frequenza-aggiornamento-dataset-dct-accrualperiodicity">2.2.7. Frequenza aggiornamento dataset <code class="docutils literal"><span class="pre">dct:accrualPeriodicity</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-d-uso-di-dct-accrualperiodicity">2.2.7.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:accrualPeriodicity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_obbligatori.html#distribuzione-del-dataset-dcat-distribution">2.2.8. Distribuzione del dataset <code class="docutils literal"><span class="pre">dcat:distribution</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_obbligatori.html#esempi-d-uso-di-dcat-distribution">2.2.8.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:distribution</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dataset_elementi_raccomandati.html">2.3. Elementi raccomandati</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_raccomandati.html#sottotema-del-dataset-dct-subject">2.3.1. Sottotema del dataset <code class="docutils literal"><span class="pre">dct:subject</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_raccomandati.html#esempi-di-uso-di-dct-subject">2.3.1.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:subject</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_raccomandati.html#punto-di-contatto-del-dataset-dcat-contactpoint">2.3.2. Punto di contatto del dataset <code class="docutils literal"><span class="pre">dcat:contactPoint</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_raccomandati.html#esempi-di-uso-di-dcat-contactpoint">2.3.2.1. Esempi di uso di <code class="docutils literal"><span class="pre">dcat:contactPoint</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_raccomandati.html#editore-del-dataset-dct-publisher">2.3.3. Editore del dataset <code class="docutils literal"><span class="pre">dct:publisher</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_raccomandati.html#esempi-d-uso-di-dct-publisher">2.3.3.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:publisher</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dataset_elementi_opzionali.html">2.4. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#autore-del-dataset-dct-creator">2.4.1. Autore del dataset <code class="docutils literal"><span class="pre">dct:creator</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-dct-creator">2.4.1.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:creator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#versione-del-dataset-owl-versioninfo">2.4.2. Versione del dataset <code class="docutils literal"><span class="pre">owl:versionInfo</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-owl-versioninfo">2.4.2.1. Esempi di uso di <code class="docutils literal"><span class="pre">owl:versionInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#data-rilascio-dataset-dct-issued">2.4.3. Data rilascio dataset <code class="docutils literal"><span class="pre">dct:issued</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-dct-issued">2.4.3.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:issued</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#pagina-di-accesso-del-dataset-dcat-landingpage">2.4.4. Pagina di accesso del dataset <code class="docutils literal"><span class="pre">dcat:landingPage</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-d-uso-di-dcat-landingpage">2.4.4.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:landingPage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#lingua-del-dataset-dct-language">2.4.5. Lingua del dataset <code class="docutils literal"><span class="pre">dct:language</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-dct-language">2.4.5.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:language</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#parole-chiave-dataset-dcat-keyword">2.4.6. Parole chiave dataset <code class="docutils literal"><span class="pre">dcat:keyword</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-dcat-keyword">2.4.6.1. Esempi di uso di <code class="docutils literal"><span class="pre">dcat:keyword</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#dataset-correlato-dct-isversionof">2.4.7. Dataset correlato <code class="docutils literal"><span class="pre">dct:isVersionOf</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-d-uso-di-dct-isversionof">2.4.7.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:isVersionOf</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#estensione-temporale-del-dataset-dct-temporal">2.4.8. Estensione temporale del dataset <code class="docutils literal"><span class="pre">dct:temporal</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-d-uso-di-dct-temporal">2.4.8.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:temporal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#copertura-geografica-del-dataset-dct-spatial">2.4.9. Copertura geografica del dataset <code class="docutils literal"><span class="pre">dct:spatial</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-d-uso-di-dct-spatial">2.4.9.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:spatial</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#conformita-del-dataset-dct-conformsto">2.4.10. Conformità del dataset <code class="docutils literal"><span class="pre">dct:conformsTo</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-dct-conformsto">2.4.10.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:conformsTo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dataset_elementi_opzionali.html#altro-identificativo-del-dataset-adms-identifier">2.4.11. Altro identificativo del dataset <code class="docutils literal"><span class="pre">adms:identifier</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dataset_elementi_opzionali.html#esempi-di-uso-di-adms-identifier">2.4.11.1. Esempi di uso di <code class="docutils literal"><span class="pre">adms:identifier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="distribuzione.html">3. Distribuzione</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="distribuzione_esempi.html">3.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="distribuzione_elementi_obbligatori.html">3.2. Elementi obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_obbligatori.html#formato-distribuzione-dct-format">3.2.1. Formato Distribuzione <code class="docutils literal"><span class="pre">dct:format</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_obbligatori.html#esempi-d-uso-di-dct-format">3.2.1.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:format</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_obbligatori.html#url-di-accesso-dcat-accessurl">3.2.2. URL di accesso <code class="docutils literal"><span class="pre">dcat:accessURL</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_obbligatori.html#esempi-d-uso-di-dcat-accessurl">3.2.2.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:accessURL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_obbligatori.html#licenza-dct-license">3.2.3. Licenza <code class="docutils literal"><span class="pre">dct:license</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_obbligatori.html#esempi-d-uso-di-dct-license">3.2.3.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:license</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="distribuzione_elementi_raccomandati.html">3.3. Elementi raccomandati</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_raccomandati.html#descrizione-distribuzione-dct-description">3.3.1. Descrizione distribuzione <code class="docutils literal"><span class="pre">dct:description</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_raccomandati.html#esempi-di-uso-di-dct-description">3.3.1.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:description</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="distribuzione_elementi_opzionali.html">3.4. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_opzionali.html#titolo-distribuzione-dct-title">3.4.1. Titolo distribuzione <code class="docutils literal"><span class="pre">dct:title</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_opzionali.html#esempi-di-uso-di-dct-title">3.4.1.1. Esempi di uso di <code class="docutils literal"><span class="pre">dct:title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_opzionali.html#url-di-download-dcat-downloadurl">3.4.2. URL di download <code class="docutils literal"><span class="pre">dcat:downloadURL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_opzionali.html#ultima-modifica-distribuzione-dct-modified">3.4.3. Ultima modifica distribuzione <code class="docutils literal"><span class="pre">dct:modified</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_opzionali.html#esempi-d-uso-di-dct-modified">3.4.3.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dct:modified</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="distribuzione_elementi_opzionali.html#dimensione-in-byte-dcat-bytesize">3.4.4. Dimensione in byte <code class="docutils literal"><span class="pre">dcat:byteSize</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="distribuzione_elementi_opzionali.html#esempi-d-uso-di-dcat-bytesize">3.4.4.1. Esempi d&#8217;uso di <code class="docutils literal"><span class="pre">dcat:byteSize</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="organizzazione.html">4. Soggetto o Organizzazione</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="organizzazione_esempi.html">4.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="organizzazione_elementi_obbligatori.html">4.2. Elementi obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="organizzazione_elementi_obbligatori.html#identificativo-del-soggetto-dct-identifier">4.2.1. Identificativo del soggetto <code class="docutils literal"><span class="pre">dct:identifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="organizzazione_elementi_obbligatori.html#nome-del-soggetto-foaf-name">4.2.2. Nome del soggetto <code class="docutils literal"><span class="pre">foaf:name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="licenza.html">5. Licenza</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="licenza_esempi.html">5.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="licenza_elementi_raccomandati.html">5.2. Elementi raccomandati</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="licenza_elementi_raccomandati.html#tipo-licenza-dct-type">5.2.1. Tipo licenza <code class="docutils literal"><span class="pre">dct:type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="licenza_elementi_opzionali.html">5.3. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="licenza_elementi_opzionali.html#nome-licenza-foaf-name">5.3.1. Nome licenza <code class="docutils literal"><span class="pre">foaf:name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="licenza_elementi_opzionali.html#versione-licenza-owl-versioninfo">5.3.2. Versione licenza <code class="docutils literal"><span class="pre">owl:versionInfo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="punto-di-contatto.html">6. Punto di contatto</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="punto-di-contatto_esempi.html">6.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="punto-di-contatto_elementi_obbligatori.html">6.2. Elementi obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="punto-di-contatto_elementi_obbligatori.html#nome-punto-di-contatto-vcard-fn">6.2.1. Nome punto di contatto <code class="docutils literal"><span class="pre">vcard:fn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="punto-di-contatto_elementi_obbligatori.html#email-punto-di-contatto-vcard-hasemail">6.2.2. Email punto di contatto <code class="docutils literal"><span class="pre">vcard:hasEmail</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="punto-di-contatto_elementi_opzionali.html">6.3. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="punto-di-contatto_elementi_opzionali.html#telefono-punto-di-contatto-vcard-hastelephone">6.3.1. Telefono punto di contatto <code class="docutils literal"><span class="pre">vcard:hasTelephone</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="punto-di-contatto_elementi_opzionali.html#sito-punto-di-contatto-vcard-hasurl">6.3.2. Sito punto di contatto <code class="docutils literal"><span class="pre">vcard:hasURL</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="copertura-temporale.html">7. Copertura temporale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="copertura-temporale_esempi.html">7.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="copertura-temporale_elementi_obbligatori.html">7.2. Elemento obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="copertura-temporale_elementi_obbligatori.html#data-inizio-dcatapit-startdate">7.2.1. Data inizio <code class="docutils literal"><span class="pre">dcatapit:startDate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="copertura-temporale_elementi_opzionali.html">7.3. Elemento opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="copertura-temporale_elementi_opzionali.html#data-inizio-dcatapit-enddate">7.3.1. Data inizio <code class="docutils literal"><span class="pre">dcatapit:endDate</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="copertura-geografica.html">8. Copertura geografica</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="copertura-geografica_esempi.html">8.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="copertura-geografica_elementi_opzionali.html">8.2. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="copertura-geografica_elementi_opzionali.html#nome-geografico-locn-geographicname">8.2.1. Nome geografico <code class="docutils literal"><span class="pre">locn:geographicName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="copertura-geografica_elementi_opzionali.html#geometria-loc-geometry">8.2.2. Geometria <code class="docutils literal"><span class="pre">loc:Geometry</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="copertura-geografica_elementi_obbligatori_geometria.html">8.3. Elementi obbligatori della geometria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="copertura-geografica_elementi_obbligatori_geometria.html#crs">8.3.1. CRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copertura-geografica_elementi_obbligatori_geometria.html#coordinate">8.3.2. Coordinate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copertura-geografica_elementi_obbligatori_geometria.html#tipo-di-geometria">8.3.3. Tipo di geometria</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html">9. Standard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="standard_esempi.html">9.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="standard_elementi_obbligatori.html">9.2. Elementi obbligatori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="standard_elementi_obbligatori.html#identificativo-dello-standard-dct-identifier">9.2.1. Identificativo dello standard <code class="docutils literal"><span class="pre">dct:identifier</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="standard_elementi_opzionali.html">9.3. Elementi opzionali</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="standard_elementi_opzionali.html#titolo-dello-standard-dct-title">9.3.1. Titolo dello standard <code class="docutils literal"><span class="pre">dct:title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="standard_elementi_opzionali.html#descrizione-dello-standard-dct-description">9.3.2. Descrizione dello standard <code class="docutils literal"><span class="pre">dct:description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="standard_elementi_opzionali.html#documentazione-di-riferimento-dcatapit-referencedocumentation">9.3.3. Documentazione di riferimento <code class="docutils literal"><span class="pre">dcatapit:referenceDocumentation</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="identificativo-alternativo.html">10. Identificativo alternativo del Dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="identificativo-alternativo_esempi.html">10.1. Esempi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="identificativo-alternativo_elementi_raccomandati.html">10.2. Elementi raccomandati</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="identificativo-alternativo_elementi_raccomandati.html#notazione-skos-notation">10.2.1. Notazione <code class="docutils literal"><span class="pre">skos:notation</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="errori.html">Errori comuni nell&#8217;uso di DCAT-AP_IT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="errori.html#gestione-degli-uri">Gestione degli URI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errori.html#differenza-tra-literal-valore-e-uri">Differenza tra Literal (valore) e URI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="temi.html">Temi dei dati</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#agricoltura-pesca-silvicoltura-e-prodotti-alimentari">1. Agricoltura, pesca, silvicoltura e prodotti alimentari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#economia-e-finanze">2. Economia e Finanze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#istruzione-cultura-e-sport">3. Istruzione, cultura e sport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#energia">4. Energia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#ambiente">5. Ambiente</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#governo-e-settore-pubblico">6. Governo e settore pubblico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#salute">7. Salute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#tematiche-internazionali">8. Tematiche internazionali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#giustizia-sistema-giuridico-e-sicurezza-pubblica">9. Giustizia, sistema giuridico e sicurezza pubblica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#regioni-e-citta">10. Regioni e città</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#popolazione-e-societa">11. Popolazione e società</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#scienza-e-tecnologia">12. Scienza e tecnologia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temi.html#trasporti">13. Trasporti</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="voccontrollati.html">Vocabolari Controllati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-sottotemi-dei-dati.html">Mapping temi e sotto temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-dati-temi-inspire.html">Mapping temi dati e temi INSPIRE</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+                        </div>
+                        <div class="articleComments">
+                            
+                        </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="intro.html" class="btn float-right" title="Introduzione" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, AgID - Agenzia per l&#39;Italia Digitale.
+      Ultimo aggiornamento 06/04/2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using the official <a href="https://github.com/italia/sphinx_italia_theme">Italia theme</a> based on the <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+ 
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: './',
+            VERSION: '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE: true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>   
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+      
+    <script type="text/javascript">
+        jQuery(function() {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+     
+
+</body>
+
+</html>

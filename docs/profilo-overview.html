@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Overview profilo &mdash; datipubblici - linee guida cataloghi dati 1.0 documentazione</title>
+               
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />   
+    <link rel="index" title="Indice" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="top" title="datipubblici - linee guida cataloghi dati 1.0 documentazione" href="index.html" />
+    <link rel="up" title="Profilo metadatazione DCAT-AP_IT" href="dcat-ap_it.html" />
+    <link rel="next" title="1. Catalogo" href="catalogo.html" />
+    <link rel="prev" title="Ontologia OWL di DCAT-AP_IT" href="ontologia.html" />  
+    <script src="_static/js/modernizr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+     
+    <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-scroll">
+                <div class="wy-side-nav-search">
+                    
+
+                    <div class="branding clearfix">
+                        <div class="branding--logo">
+                            <a href="https://docs.developers.italia.it">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+                              <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h160v160H0z"/>
+                                <path fill="#fff" d="M58.28 131.956V49.918h21.5v82.184h-21.5v-.146zm84.435-63.353h-19.65v33.72c0 3.358.143 5.547.285 7.007.143 1.314.712 2.482 1.71 3.504.996 1.02 2.562 1.46 4.698 1.46l12.245-.293.997 17.52c-7.12 1.606-12.673 2.48-16.375 2.48-9.682 0-16.232-2.19-19.65-6.713-3.56-4.38-5.267-12.554-5.267-24.524V27h21.5v22.772h19.65v18.83h-.143zM25.957 74.88c-3.702 0-6.834-1.314-9.255-3.94C14.282 68.31 13 65.1 13 61.303c0-3.795 1.28-7.007 3.56-9.634 2.42-2.63 5.553-3.798 9.255-3.798 3.702 0 6.835 1.314 9.255 3.942 2.42 2.627 3.56 5.84 3.56 9.78 0 3.942-1.14 7.007-3.56 9.635-2.278 2.335-5.268 3.65-9.113 3.65z"/>
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="branding--content">
+                            <h2 class="branding--title">
+                                <span class="branding--title--root">/ <a href="https://developers.italia.it">developers</a></span>
+                                <span class="branding--title--branch">/ <a href="https://docs.developers.italia.it">docs</a></span>
+                            </h2>
+                        </div>
+                        <h3 class="branding--tagline">La community italiana degli sviluppatori di servizi pubblici</h3>
+                    </div>
+
+            
+            
+            <h1 class="project-title"><a href="index.html" class="icon icon-home"> datipubblici - linee guida cataloghi dati </a></h1>
+            
+
+
+                     
+                    
+                    <div class="version">version 1.0</div>
+                      
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> 
+                </div>
+
+                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduzione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alimentarecatalogo.html">Come alimentare un catalogo dati</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ontologia.html">Ontologia OWL di DCAT-AP_IT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview profilo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalogo.html">1. Catalogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataset.html">2. Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distribuzione.html">3. Distribuzione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizzazione.html">4. Soggetto o Organizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="licenza.html">5. Licenza</a></li>
+<li class="toctree-l2"><a class="reference internal" href="punto-di-contatto.html">6. Punto di contatto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copertura-temporale.html">7. Copertura temporale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copertura-geografica.html">8. Copertura geografica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html">9. Standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identificativo-alternativo.html">10. Identificativo alternativo del Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errori.html">Errori comuni nell&#8217;uso di DCAT-AP_IT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="temi.html">Temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voccontrollati.html">Vocabolari Controllati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-sottotemi-dei-dati.html">Mapping temi e sotto temi dei dati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-temi-dati-temi-inspire.html">Mapping temi dati e temi INSPIRE</a></li>
+</ul>
+  
+                </div>
+            </div>
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+            
+            <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="index.html">datipubblici - linee guida cataloghi dati</a> 
+            </nav>
+
+
+            
+            <div class="wy-nav-content">
+                <div class="rst-content">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dcat-ap_it.html">Profilo metadatazione DCAT-AP_IT</a> &raquo;</li>
+        
+      <li>Overview profilo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/profilo-overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div itemprop="articleBody">
+                            
+  <div class="section" id="overview-profilo">
+<h1>Overview profilo<a class="headerlink" href="#overview-profilo" title="Link a questa intestazione">¶</a></h1>
+<p>La tabella che segue riporta l’elenco delle classi e delle proprietà definite nel profilo italiano e il relativo livello di obbligatorietà; in particolare, “M” indica che la classe è obbligatoria, “R” indica che è raccomandata e “O” indica che è opzionale.</p>
+<p>Esempi completi dell&#8217;uso del profilo sono comunque disponibili anche in <code class="docutils literal"><span class="pre">dati.gov.it</span></code> in <a class="reference external" href="http://www.dati.gov.it/sites/default/files/esempi_0.zip">RDF/XML e  RDF/Turtle.</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="57%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Classe</th>
+<th class="head">Proprietà</th>
+<th class="head">Obbligatorietà (M, R, O)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="catalogo.html">CATALOGO</a></td>
+<td>&nbsp;</td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_obbligatori.html#titolo-dct-title">titolo</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Catalogo</td>
+<td><a class="reference external" href="ccatalogo_elementi_obbligatori.html#descrizione-dct-description">descrizione</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_obbligatori.html#editore-dct-publisher">editore</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_obbligatori.html#data-ultima-modifica-dct-modified">data ultima modifica</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_obbligatori.html#dataset-dcat-dataset">dataset</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_raccomandati.html#homepage-foaf-homepage">home page</a></td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_raccomandati.html#lingua-dct-language">lingua</a></td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_raccomandati.html#data-di-rilascio-dct-issued">data di rilascio</a></td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td>Catalogo</td>
+<td><a class="reference external" href="catalogo_elementi_raccomandati.html#temi-dcat-themetaxonomy">temi</a></td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="dataset.html">DATASET</a></td>
+<td>&nbsp;</td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#identificativo-del-dataset-dct-identifier">identificativo</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#titolo-del-dataset-dct-title">titolo</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#descrizione-del-dataset-dct-description">descrizione</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#ultima-modifica-del-dataset-dct-modified">data ultima modifica</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#temi-del-dataset-dcat-theme">temi</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#titolare-del-dataset-dct-rightsholder">titolare</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#frequenza-aggiornamento-dataset-dct-accrualperiodicity">frequenza di aggiornamento</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_obbligatori.html#distribuzione-del-dataset-dcat-distribution">distribuzione</a></td>
+<td>M (nel caso di dati aperti)</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_raccomandati.html#sottotema-del-dataset-dct-subject">sottotema</a></td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_raccomandati.html#punto-di-contatto-del-dataset-dcat-contactpoint">punto di contatto</a></td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_raccomandati.html#editore-del-dataset-dct-publisher">editore</a></td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#autore-del-dataset-dct-creator">autore</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#versione-del-dataset-owl-versioninfo">versione</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#data-rilascio-dataset-dct-issued">data di rilascio</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#pagina-di-accesso-del-dataset-dcat-landingpage">pagina di accesso</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#lingua-del-dataset-dct-language">lingua</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#parole-chiave-dataset-dcat-keyword">parole chiave</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#dataset-correlato-dct-isversionof">dataset correlato</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#estensione-temporale-del-dataset-dct-temporal">estensione temporale</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#copertura-geografica-del-dataset-dct-spatial">copertura geografica</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#conformita-del-dataset-dct-conformsto">conformità</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Dataset</td>
+<td><a class="reference external" href="dataset_elementi_opzionali.html#altro-identificativo-del-dataset-adms-identifier">altro identificativo</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="distribuzione.html">DISTRIBUZIONE</a></td>
+<td>&nbsp;</td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Distribuzione</td>
+<td><a class="reference external" href="distribuzione_elementi_obbligatori.html#formato-distribuzione-dct-format">formato</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Distribuzioen</td>
+<td><a class="reference external" href="distribuzione_elementi_obbligatori.html#url-di-accesso-dcat-accessurl">URL di accesso</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Distribuzioe</td>
+<td><a class="reference external" href="distribuzione_elementi_obbligatori.html#licenza-dct-license">licenza</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Distribuzione</td>
+<td><a class="reference external" href="distribuzione_elementi_raccomandati.html#descrizione-distribuzione-dct-description">descrizione</a></td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td>Distribuzione</td>
+<td><a class="reference external" href="distribuzione_elementi_opzionali.html#titolo-distribuzione-dct-title">titolo</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Distribuzione</td>
+<td><a class="reference external" href="distribuzione_elementi_opzionali.html#url-di-download-dcat-downloadurl">URL di download</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Distribuzione</td>
+<td><a class="reference external" href="distribuzione_elementi_opzionali.html#ultima-modifica-distribuzione-dct-modified">data ultima modifica</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Distribuzione</td>
+<td><a class="reference external" href="distribuzione_elementi_opzionali.html#dimensione-in-byte-dcat-bytesize">dimensione in byte</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="organizzazione.html#">SOGGETTO</a></td>
+<td>&nbsp;</td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Soggetto</td>
+<td><a class="reference external" href="organizzazione_elementi_obbligatori.html#identificativo-del-soggetto-dct-identifier">identificativo</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Soggetto</td>
+<td><a class="reference external" href="organizzazione_elementi_obbligatori.html#nome-del-soggetto-foaf-name">nome</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="identificativo-alternativo.html">IDENTIFICATIVO ALTERNATIVO</a></td>
+<td>&nbsp;</td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>identificativo alternativo</td>
+<td><a class="reference external" href="identificativo-alternativo_elementi_raccomandati.html#notazione-skos-notation">notazione</a></td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="licenza.html">LICENZA</a></td>
+<td>&nbsp;</td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Licenza</td>
+<td><a class="reference external" href="licenza_elementi_raccomandati.html#tipo-licenza-dct-type">tipo</a></td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td>Licenza</td>
+<td><a class="reference external" href="licenza_elementi_opzionali.html#nome-licenza-foaf-name">nome</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Licenza</td>
+<td><a class="reference external" href="licenza_elementi_opzionali.html#versione-licenza-owl-versioninfo">versione</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="copertura-temporale.html">PERIODO DI TEMPO</a></td>
+<td>&nbsp;</td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Periodo di tempo</td>
+<td><a class="reference external" href="copertura-temporale_elementi_obbligatori.html#data-inizio-dcatapit-startdate">data di inizio</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Periodo di tempo</td>
+<td><a class="reference external" href="copertura-temporale_elementi_opzionali.html#data-inizio-dcatapit-enddate">data di fine</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="standard.html">STANDARD</a></td>
+<td>&nbsp;</td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Standard</td>
+<td><a class="reference external" href="standard_elementi_obbligatori.html#identificativo-dello-standar-dct-identifier">identificativo</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Standard</td>
+<td><a class="reference external" href="standard_elementi_opzionali.html#titolo-dello-standard-dct-title">titolo</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Standard</td>
+<td><a class="reference external" href="standard_elementi_opzionali.html#descrizione-dello-standard-dct-description">descrizione</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Standard</td>
+<td><a class="reference external" href="standard_elementi_opzionali.html#documentazione-di-riferimento-dcatapit-referencedocumentation">documentazione di riferimento</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="punto-di-contatto.html">PUNTO DI CONTATTO (ORGANIZZAZIONE)</a></td>
+<td>&nbsp;</td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td>Punto di contatto (organizzazione)</td>
+<td><a class="reference external" href="punto-di-contatto_elementi_obbligatori.html#nome-punto-di-contatto-vcard-fn">nome</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Punto di contatto (organizzazione)</td>
+<td><a class="reference external" href="punto-di-contatto_elementi_obbligatori.html#email-punto-di-contatto-vcard-hasemail">email</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Punto di contatto (organizzazione)</td>
+<td><a class="reference external" href="punto-di-contatto_elementi_opzionali.html#telefono-punto-di-contatto-vcard-hastelephone">telefono</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Punto di contatto (organizzazione)</td>
+<td><a class="reference external" href="punto-di-contatto_elementi_opzionali.html#sito-punto-di-contatto-vcard-hasurl">sito</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="copertura-geografica.html">LOCALIZZAZIONE</a></td>
+<td>&nbsp;</td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>Localizzazione</td>
+<td><a class="reference external" href="copertura-geografica_elementi_opzionali.html">nome geografico</a></td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Localizzazione</td>
+<td><a class="reference external" href="copertura-geografica_elementi_opzionali.html#geometria-loc-geometry">geometria</a></td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="copertura-geografica_elementi_obbligatori_geometria.html">GEOMETRIA</a></td>
+<td>&nbsp;</td>
+<td>O</td>
+</tr>
+<tr class="row-even"><td>Geometria</td>
+<td><a class="reference external" href="copertura-geografica_elementi_obbligatori_geometria.html#crs">crs</a></td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>Geometria</td>
+<td><a class="reference external" href="copertura-geografica_elementi_obbligatori_geometria.html#coordinate">coordinate</a></td>
+<td>M</td>
+</tr>
+<tr class="row-even"><td>Geometria</td>
+<td><a class="reference external" href="copertura-geografica_elementi_obbligatori_geometria.html#tipo-di-geometria">tipo di geometria</a></td>
+<td>M</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+                        </div>
+                        <div class="articleComments">
+                            
+                        </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="catalogo.html" class="btn float-right" title="1. Catalogo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ontologia.html" class="btn" title="Ontologia OWL di DCAT-AP_IT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, AgID - Agenzia per l&#39;Italia Digitale.
+      Ultimo aggiornamento 06/04/2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using the official <a href="https://github.com/italia/sphinx_italia_theme">Italia theme</a> based on the <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+ 
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: './',
+            VERSION: '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE: true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>   
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+      
+    <script type="text/javascript">
+        jQuery(function() {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+     
+
+</body>
+
+</html>
