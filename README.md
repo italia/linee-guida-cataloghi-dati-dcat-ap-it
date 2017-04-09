@@ -20,5 +20,5 @@ make html
 ```
 
 ### Link
-- [linee-guida-cataloghi-dati.readthedocs.io](https://linee-guida-cataloghi-dati.readthedocs.io/)
+- [linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io](https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io)
 
