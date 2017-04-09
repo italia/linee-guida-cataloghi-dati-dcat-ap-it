@@ -1,3 +1,5 @@
+.. image:: _images/agid-logo.png
+
 Linee Guida per i cataloghi dati
 ================================
 
