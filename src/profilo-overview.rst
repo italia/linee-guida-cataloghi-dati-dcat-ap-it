@@ -43,7 +43,7 @@ Dataset                                                                  `confor
 Dataset                                                                  `altro identificativo <dataset_elementi_opzionali.html#altro-identificativo-del-dataset-adms-identifier>`__                        O
 `DISTRIBUZIONE <distribuzione.html>`__                                                                                                                                                                      M
 Distribuzione                                                            `formato <distribuzione_elementi_obbligatori.html#formato-distribuzione-dct-format>`__                                             M
-Distribuzioen                                                            `URL di accesso <distribuzione_elementi_obbligatori.html#url-di-accesso-dcat-accessurl>`__                                         M
+Distribuzione                                                            `URL di accesso <distribuzione_elementi_obbligatori.html#url-di-accesso-dcat-accessurl>`__                                         M
 Distribuzioe                                                             `licenza <distribuzione_elementi_obbligatori.html#licenza-dct-license>`__                                                          M
 Distribuzione                                                            `descrizione <distribuzione_elementi_raccomandati.html#descrizione-distribuzione-dct-description>`__                               R
 Distribuzione                                                            `titolo <distribuzione_elementi_opzionali.html#titolo-distribuzione-dct-title>`__                                                  O
