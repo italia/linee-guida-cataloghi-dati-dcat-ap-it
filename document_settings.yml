@@ -1,0 +1,10 @@
+--- 
+document:
+  name: Linee guida per i cataloghi dati
+  description: |
+    Questo progetto rappresenta le linee guida per l’alimentazione e gestione
+    di cataloghi dati secondo il profilo nazionale di metadatazione
+    DCAT-AP_IT, così come raccomandato nelle linee guida per la valorizzazione
+    del patrimonio informativo pubblico (anno 2016).
+  tags:
+    - linee guida
