@@ -1,6 +1,4 @@
-.. image:: _images/agid-logo.png
-
-Linee Guida per i cataloghi dati
+Linee guida per i cataloghi dati
 ================================
 
 Questo progetto rappresenta le linee guida per l'alimentazione e gestione di cataloghi dati secondo il profilo nazionale di metadatazione DCAT-AP\_IT, così come raccomandato nelle `linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016) <http://www.dati.gov.it/sites/default/files/LG2016_0.pdf>`__.
@@ -13,7 +11,7 @@ Indice dei contenuti
 --------------------
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 2
 
    intro.rst
    alimentarecatalogo.rst

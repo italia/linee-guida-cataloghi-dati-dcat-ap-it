@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # -- PROJECT Variables ----------------------------------------------------
-settings_project_name = "datipubblici - linee guida cataloghi dati"
+settings_project_name = "Linee guida per i cataloghi dati"
 settings_copyright_copyleft = 'AgID - Agenzia per l\'Italia Digitale'
 settings_editor_name = 'AgID - Agenzia per l\'Italia Digitale'
 settings_doc_version = 'version: latest'
@@ -123,6 +123,7 @@ html_theme_options = {
     # This option can be used with docs-italia-theme to customise how the versions "badge" is shown:
     # 'False': default (alabaster) badge | 'True': custom (italia) badge
     'custom_versions_badge': 'True',
+    'collapse_navigation': 'True',    
 }
 # -- ReadTheDoc requirements and local template generation---------------------
 
