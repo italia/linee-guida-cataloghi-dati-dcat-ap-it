@@ -10,7 +10,7 @@ Classe                                                                   Proprie
 ======================================================================== ================================================================================================================================== ===========================
 `CATALOGO <catalogo.html>`__                                                                                                                                                                                M
 Catalogo                                                                 `titolo <catalogo_elementi_obbligatori.html#titolo-dct-title>`__                                                                   M
-Catalogo                                                                 `descrizione <ccatalogo_elementi_obbligatori.html#descrizione-dct-description>`__                                                  M
+Catalogo                                                                 `descrizione <catalogo_elementi_obbligatori.html#descrizione-dct-description>`__                                                  M
 Catalogo                                                                 `editore <catalogo_elementi_obbligatori.html#editore-dct-publisher>`__                                                             M
 Catalogo                                                                 `data ultima modifica <catalogo_elementi_obbligatori.html#data-ultima-modifica-dct-modified>`__                                    M
 Catalogo                                                                 `dataset <catalogo_elementi_obbligatori.html#dataset-dcat-dataset>`__                                                              M
@@ -63,7 +63,7 @@ Licenza                                                                  `versio
 Periodo di tempo                                                         `data di inizio <copertura-temporale_elementi_obbligatori.html#data-inizio-dcatapit-startdate>`__                                  M
 Periodo di tempo                                                         `data di fine <copertura-temporale_elementi_opzionali.html#data-inizio-dcatapit-enddate>`__                                        O
 `STANDARD <standard.html>`__                                                                                                                                                                                O
-Standard                                                                 `identificativo <standard_elementi_obbligatori.html#identificativo-dello-standar-dct-identifier>`__                                M
+Standard                                                                 `identificativo <standard_elementi_obbligatori.html#identificativo-dello-standard-dct-identifier>`__                                M
 Standard                                                                 `titolo <standard_elementi_opzionali.html#titolo-dello-standard-dct-title>`__                                                      O
 Standard                                                                 `descrizione <standard_elementi_opzionali.html#descrizione-dello-standard-dct-description>`__                                      O
 Standard                                                                 `documentazione di riferimento <standard_elementi_opzionali.html#documentazione-di-riferimento-dcatapit-referencedocumentation>`__ O
