@@ -44,7 +44,7 @@ Dataset                                                                  `altro 
 `DISTRIBUZIONE <distribuzione.html>`__                                                                                                                                                                      M
 Distribuzione                                                            `formato <distribuzione_elementi_obbligatori.html#formato-distribuzione-dct-format>`__                                             M
 Distribuzione                                                            `URL di accesso <distribuzione_elementi_obbligatori.html#url-di-accesso-dcat-accessurl>`__                                         M
-Distribuzioe                                                             `licenza <distribuzione_elementi_obbligatori.html#licenza-dct-license>`__                                                          M
+Distribuzione                                                             `licenza <distribuzione_elementi_obbligatori.html#licenza-dct-license>`__                                                          M
 Distribuzione                                                            `descrizione <distribuzione_elementi_raccomandati.html#descrizione-distribuzione-dct-description>`__                               R
 Distribuzione                                                            `titolo <distribuzione_elementi_opzionali.html#titolo-distribuzione-dct-title>`__                                                  O
 Distribuzione                                                            `URL di download <distribuzione_elementi_opzionali.html#url-di-download-dcat-downloadurl>`__                                       O
