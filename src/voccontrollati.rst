@@ -10,6 +10,6 @@ Tema dei dati                        https://publications.europa.eu/en/web/eu-vo
 Sottotema dei dati                   https://publications.europa.eu/en/web/eu-vocabularies/th-dataset/-/resource/dataset/eurovoc
 Frequenza di Aggiornamento           https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/frequency
 Formato delle Distribuzioni dei dati https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/file-type
-Licenze (include tipi licenze ADMS)  https://github.com/italia/daf-ontologie-vocabolari-controllati/tree/master/VocabolariControllati/licences
+Licenze (include tipi licenze ADMS)  https://github.com/italia/dati-semantic-assets/tree/master/VocabolariControllati/licences
 Identificativo della localizzazione  http://sws.geonames.org/
 ==================================== =================================================================================================
