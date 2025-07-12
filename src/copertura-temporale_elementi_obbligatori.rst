@@ -1,4 +1,4 @@
-Elemento obbligatori
+Elementi obbligatori
 ====================
 
 Data inizio ``dcatapit:startDate``
