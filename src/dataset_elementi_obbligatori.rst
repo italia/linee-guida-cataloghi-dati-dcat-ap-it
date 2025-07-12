@@ -390,11 +390,11 @@ Esempi di uso di ``dct:rightsHolder``
             "http://dati.gov.it/onto/dcatapit#\"Dataset"
           ],
            "dcterms:rightsHolder": {
-            "@id": "http://dati.gov.it/resource/Amministraione/agid"
+            "@id": "http://dati.gov.it/resource/Amministrazione/agid"
           },
           altri elementi per specificare il dataset
 
-          Dove l'Organizzazione http://dati.gov.it/resource/Amministraione/agid è definita come:
+          Dove l'Organizzazione http://dati.gov.it/resource/Amministrazione/agid è definita come:
 
           "@id": "http://dati.gov.it/resource/Amministrazione/agid",
           "@type": [
@@ -417,7 +417,7 @@ Esempi di uso di ``dct:rightsHolder``
        <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
        <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
           <rdf:type rdf:resource="&dcat;Dataset"/>
-          <dct:rightsHolder rdf:resource="http://dati.gov.it/resource/Amministraione/agid"/>
+          <dct:rightsHolder rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
           [altri elementi per specificare il dataset]
        </dcatapit:Dataset>
 
@@ -438,11 +438,11 @@ Esempi di uso di ``dct:rightsHolder``
 
      <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
         a                 dcatapit:Dataset , dcat:Dataset ;
-        dct:rightsHolder  <http://dati.gov.it/resource/Amministraione/agid> ;
+        dct:rightsHolder  <http://dati.gov.it/resource/Amministrazione/agid> ;
 
         [altri elementi per specificare il dataset] .
 
-     Dove l'organizzazione <http://dati.gov.it/resource/Amministraione/agid> è definita come
+     Dove l'organizzazione <http://dati.gov.it/resource/Amministrazione/agid> è definita come
 
      <http://dati.gov.it/resource/Amministrazione/agid>
         a                 dcatapit:Agent , foaf:Agent ;
