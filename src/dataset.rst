@@ -15,7 +15,7 @@ elemento          valore
 **Descrizione**   Il dataset da descrivere
 **Cardinalità**   1..N
 **Stato**         Obbligatorio
-**RIferimento**   http://www.dati.gov.it/onto/dcatapit#Dataset
+**Riferimento**   http://www.dati.gov.it/onto/dcatapit#Dataset
 ================  ================================================================================
 
 .. toctree::
