@@ -1,4 +1,4 @@
-Elemento opzionali
+Elementi opzionali
 ==================
 
 Data di fine ``dcatapit:endDate``
